@@ -1,3 +1,4 @@
+import SelectedWarehouse from "../../components/SelectedWarehouse/SelectedWarehouse"
 
 const Warehouses = () => {
   return (
