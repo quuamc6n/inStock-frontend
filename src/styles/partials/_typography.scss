@@ -1,0 +1,132 @@
+@use "./variables" as *;
+
+@font-face {
+  font-family: Titillium Web;
+  src: url("../../assets/fonts/TitilliumWeb-Regular.ttf") format("TrueType");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Titillium Web;
+  src: url("../../assets/fonts/TitilliumWeb-SemiBold.ttf") format("TrueType");
+  font-style: normal;
+  font-weight: 600;
+}
+
+// Mobile:
+
+@mixin body-small-mobile() {
+  font-family: $base-font-family;
+  font-style: normal;
+  font-weight: 400;
+  color: $instock-black;
+  font-size: 0.6875rem;
+}
+
+@mixin body-medium-mobile() {
+  font-family: $base-font-family;
+  font-style: normal;
+  font-weight: 400;
+  color: $brainflix-black;
+  font-size: 0.8125rem;
+}
+
+@mixin body-large-mobile() {
+  font-family: $base-font-family;
+  font-style: normal;
+  font-weight: 400;
+  color: $brainflix-black;
+  font-size: 0.9375rem;
+}
+
+@mixin table-header-mobile() {
+  font-family: $base-font-family;
+  font-style: normal;
+  font-weight: 400;
+  color: $brainflix-black;
+  font-size: 0.6875rem;
+}
+
+@mixin labels-mobile() {
+  font-family: $base-font-family;
+  font-style: normal;
+  font-weight: 600;
+  color: $brainflix-black;
+  font-size: 0.8125rem;
+}
+
+@mixin sub-header-mobile() {
+  font-family: $base-font-family;
+  font-style: normal;
+  font-weight: 600;
+  color: $brainflix-black;
+  font-size: 1.25rem;
+}
+
+@mixin page-header-mobile() {
+  font-family: $base-font-family;
+  font-style: normal;
+  font-weight: 600;
+  color: $brainflix-black;
+  font-size: 1.75rem;
+}
+
+// Tablet:
+
+@mixin body-small-tablet() {
+  font-family: $base-font-family;
+  font-style: normal;
+  font-weight: 400;
+  color: $instock-black;
+  font-size: 0.75rem;
+}
+
+@mixin body-medium-tablet() {
+  font-family: $base-font-family;
+  font-style: normal;
+  font-weight: 400;
+  color: $instock-black;
+  font-size:  0.875rem;
+}
+
+@mixin body-large-tablet() {
+  font-family: $base-font-family;
+  font-style: normal;
+  font-weight: 400;
+  color: $instock-black;
+  font-size:  1rem;
+}
+
+@mixin table-header-tablet() {
+  font-family: $base-font-family;
+  font-style: normal;
+  font-weight: 400;
+  color: $instock-black;
+  font-size: 0.75rem;
+}
+
+@mixin labels-tablet() {
+  font-family: $base-font-family;
+  font-style: normal;
+  font-weight: 600;
+  color: $instock-black;
+  font-size: 0.875rem;
+}
+
+@mixin sub-header-tablet() {
+  font-family: $base-font-family;
+  font-style: normal;
+  font-weight: 600;
+  color: $instock-black;
+  font-size: 1.5rem;
+}
+
+@mixin sub-header-tablet() {
+  font-family: $base-font-family;
+  font-style: normal;
+  font-weight: 600;
+  color: $instock-black;
+  font-size: 2rem;
+}
+
