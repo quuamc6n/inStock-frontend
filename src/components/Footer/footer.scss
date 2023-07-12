@@ -1,0 +1,14 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/typography" as *;
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 2.5rem;
+    @include body-small-mobile;
+
+    @include tablet {
+        @include body-small-tablet
+    }
+}
