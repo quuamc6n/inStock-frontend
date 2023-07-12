@@ -1,8 +1,9 @@
 import React from 'react'
+import "./footer.scss";
 
 function Footer() {
   return (
-    <div>© InStock Inc. All Rights Reserved.</div>
+    <p className='footer'>© InStock Inc. All Rights Reserved.</p>
   )
 }
 
