@@ -11,6 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
           <Route path="warehouses" element={<Warehouses />}></Route>
+          <Route path="warehouses/add" element={<Warehouses />}></Route>
           <Route path="warehouses/:warehouseId" element={<Warehouses />}></Route>
           <Route path="warehouses/:warehouseId/delete" element={<Warehouses />}></Route>
           <Route path="warehouses/:warehouseId/edit" element={<Warehouses />}></Route>
