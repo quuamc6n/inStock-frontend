@@ -1,5 +1,8 @@
 import "./WarehouseList.scss";
 import { Link } from "react-router-dom";
+import editIcon from "../../assets/images/Icons/edit-24px.svg";
+import deleteIcon from "../../assets/images/Icons/delete_outline-24px.svg";
+
 
 /* tables will have the following names for us to use to access data:
 id
@@ -83,8 +86,12 @@ const WarehouseList = () => {
                 </div>
               </div>
               <div className="main__buttons">
-                  <button>trashcan</button>
-                  <button>edit</button>
+                <Link>
+                  <img src={deleteIcon}></img>
+                </Link>
+                <Link>
+                  <img src={editIcon}></img>
+                </Link>
               </div>
             </div>
           </section>

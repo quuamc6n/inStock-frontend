@@ -1,4 +1,6 @@
-@use "../../styles/partials/resets";
+@use "../../styles/partials/resets" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
 
 .main{
 
@@ -7,7 +9,6 @@
     }
 
     &__card{
-        margin: 1rem;
 
         &-info{
             display: flex;
@@ -17,10 +18,12 @@
 
     &__div{
         width: 50%;
-        margin-bottom: 1rem;
+        margin: 1rem 1rem 0 1rem;
+        @include body-medium-mobile;
+
         &-title{
-            font-size: 11px; //Just added this to make sure we have the right
-                            // layout. Can bring in variable for font later
+            @include body-small-mobile;
+            color: $slate;
         }
 
         &-link{
@@ -36,6 +39,7 @@
     &__buttons{
     display: flex;
     justify-content: space-between;
+    margin: 1rem 1rem 1rem 1rem;
     }
 }
 
