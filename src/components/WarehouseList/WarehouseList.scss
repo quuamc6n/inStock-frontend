@@ -1,0 +1,44 @@
+@use "../../styles/partials/resets";
+
+.main{
+
+    &__section{
+        border-top: 1px solid grey;
+    }
+
+    &__card{
+        margin: 1rem;
+
+        &-info{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__div{
+        width: 50%;
+        margin-bottom: 1rem;
+        &-title{
+            font-size: 11px; //Just added this to make sure we have the right
+                            // layout. Can bring in variable for font later
+        }
+
+        &-link{
+
+        }
+
+        &-info{
+
+        }
+
+
+    }
+    &__buttons{
+    display: flex;
+    justify-content: space-between;
+    }
+}
+
+a {
+    text-decoration: none;
+}
