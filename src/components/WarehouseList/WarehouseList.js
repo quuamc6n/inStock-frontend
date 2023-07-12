@@ -1,6 +1,20 @@
 import "./WarehouseList.scss";
 import { Link } from "react-router-dom";
 
+/* tables will have the following names for us to use to access data:
+id
+warehouse_name
+address
+city
+country
+contact_name
+contact_position
+contact_email
+contact_phone
+created_at
+updated_at
+*/
+
 const warehouses = [
   {
     id: 0,
