@@ -44,7 +44,7 @@
   font-family: $base-font-family;
   font-style: normal;
   font-weight: 400;
-  color: $brainflix-black;
+  color: $slate;
   font-size: 0.6875rem;
 }
 
@@ -87,7 +87,7 @@
   font-style: normal;
   font-weight: 400;
   color: $instock-black;
-  font-size:  0.875rem;
+  font-size: 0.875rem;
 }
 
 @mixin body-large-tablet() {
@@ -95,14 +95,14 @@
   font-style: normal;
   font-weight: 400;
   color: $instock-black;
-  font-size:  1rem;
+  font-size: 1rem;
 }
 
 @mixin table-header-tablet() {
   font-family: $base-font-family;
   font-style: normal;
   font-weight: 400;
-  color: $instock-black;
+  color: $slate;
   font-size: 0.75rem;
 }
 
@@ -122,11 +122,10 @@
   font-size: 1.5rem;
 }
 
-@mixin sub-header-tablet() {
+@mixin page-header-tablet() {
   font-family: $base-font-family;
   font-style: normal;
   font-weight: 600;
   color: $instock-black;
   font-size: 2rem;
 }
-
