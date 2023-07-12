@@ -1,5 +1,9 @@
 import "./WarehouseList.scss";
 import { Link } from "react-router-dom";
+import editIcon from "../../assets/images/Icons/edit-24px.svg";
+import deleteIcon from "../../assets/images/Icons/delete_outline-24px.svg";
+import searchIcon from "../../assets/images/Icons/search-24px.svg";
+import chevron from "../../assets/images/Icons/chevron_right-24px.svg";
 
 /* tables will have the following names for us to use to access data:
 id
@@ -26,33 +30,58 @@ const warehouses = [
   },
   {
     id: 1,
-    warehouse: "Manhattan",
-    address: "506 Broadway, New York, USA",
-    contactName: "Parmin Aujla",
-    phone: "+1 (629) 555-0129",
-    email: "paujla@instock.com",
+    warehouse: "Washington",
+    address: "33 Pearl Street SW, Washington, USA",
+    contactName: "Graeme Lyon",
+    phone: "+1 (647) 504-0911",
+    email: "glyon@instock.com",
   },
   {
     id: 2,
-    warehouse: "Manhattan",
-    address: "506 Broadway, New York, USA",
-    contactName: "Parmin Aujla",
-    phone: "+1 (629) 555-0129",
-    email: "paujla@instock.com",
+    warehouse: "Jersey",
+    address: "300 Main Street, New Jersey, USA",
+    contactName: "Brad MacDonald",
+    phone: "+1 (401) 377-2337",
+    email: "bmcdonald@instock.com",
   },
   {
     id: 3,
-    warehouse: "Manhattan",
-    address: "506 Broadway, New York, USA",
-    contactName: "Parmin Aujla",
-    phone: "+1 (629) 555-0129",
-    email: "paujla@instock.com",
+    warehouse: "San Fran",
+    address: "890 Brannan Street, San Francisco, USA",
+    contactName: "Gary Wong",
+    phone: "+1 (239) 555-0108",
+    email: "gwong@instock.com",
+  },
+  {
+    id: 4,
+    warehouse: "Santa Monica",
+    address: "520 Boradway, Santa Monica, USA",
+    contactName: "Sharon Ng",
+    phone: "+1 (270) 555-0117",
+    email: "sng@instock.com",
   },
 ];
 
 const WarehouseList = () => {
   return (
     <main className="main">
+      <container className="search__container">
+        <div className="search">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="search__bar"
+          ></input>
+          <img src={searchIcon} className="search__bar-image"></img>
+        </div>
+      </container>
+      <container className="addition__container">
+        <Link to={`/warehouses/add`}>
+          <div className="addition">
+            <div className="addition__button">+ Add New Warehouse</div>
+          </div>
+        </Link>
+      </container>
       {/* Will need to add search bar and + Add New Warehouse button 
           This will be components if I am not mistaken*/}
       {warehouses.map((warehouse) => {
@@ -63,7 +92,8 @@ const WarehouseList = () => {
                 <div className="main__div">
                   <p className="main__div-title">WAREHOUSE</p>
                   <Link key={warehouse.id} to={`/warehouses/${warehouse.id}`}>
-                    <p className="main__div-link">{`${warehouse.warehouse} >`}</p>
+                    <span className="main__div-link">{`${warehouse.warehouse}`}</span>
+                    <img className="main__div-link-chevron" src={chevron}></img>
                   </Link>
                 </div>
                 <div className="main__div">
@@ -83,8 +113,12 @@ const WarehouseList = () => {
                 </div>
               </div>
               <div className="main__buttons">
-                  <button>trashcan</button>
-                  <button>edit</button>
+                <Link>
+                  <img src={deleteIcon}></img>
+                </Link>
+                <Link>
+                  <img src={editIcon}></img>
+                </Link>
               </div>
             </div>
           </section>
