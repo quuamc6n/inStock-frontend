@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Warehouses from "./pages/Warehouses/Warehouses";
+import Inventories from "./pages/Inventories/Inventories";
+import HomePage from "./pages/HomePage/HomePage";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    {/* Will need to discuss how to create routes for specific warehouse inventories
+        ie: Washington warehouse inventory would be something along the line of: 
+                    warehouses/warehouseId/inventory 
+        Need to make sure params does not grab everything after the : and only up to the following / */}
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />}></Route>
+          <Route path="warehouses" element={<Warehouses />}></Route>
+          <Route path="warehouses/:warehouseId" element={<Warehouses />}></Route>
+          {/* <Route path="warehouses/:warehouseId/inventory" element={<Warehouses />}></Route> */}
+          <Route path="inventories" element={<Inventories />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
