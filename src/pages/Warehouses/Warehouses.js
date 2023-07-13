@@ -10,7 +10,7 @@ const Warehouses = () => {
     axios.get(`http://localhost:8080/warehouses`).then((warehouseList) => {
       setWarehouses(warehouseList.data);
     });
-  });
+  }, []);
 
   return (
     <div>
