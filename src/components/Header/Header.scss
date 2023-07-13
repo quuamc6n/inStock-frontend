@@ -14,7 +14,6 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 1.5rem;
-    
   }
 
   &__list {
@@ -24,7 +23,7 @@
     list-style-type: none;
 
     @include tablet {
-     justify-content: flex-end;
+      justify-content: flex-end;
     }
   }
 
@@ -37,24 +36,22 @@
   }
 
   &__list-item {
-    @include labels-mobile();
-    color: $cloud;
-
-    &:hover {
-      color: $white;
-    }
   }
 
   &__list-item--inventory {
-    padding-left: 1rem;
+    @include tablet {
+      padding-left: 1rem;
+    }
   }
 
-//   &__list-link {
-//     text-decoration: none;
-//   }
-
-}
-
-a {
+  &__list-link {
+    @include labels-mobile();
     text-decoration: none;
+    color: $cloud;
+   
+    &:hover {
+      color: $white;
+    }
+
+  }
 }
