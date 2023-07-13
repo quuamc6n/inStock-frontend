@@ -1,0 +1,60 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/typography" as *;
+
+.navbar {
+  background-color: $graphite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.5rem;
+    
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    list-style-type: none;
+
+    @include tablet {
+     justify-content: flex-end;
+    }
+  }
+
+  &__logo {
+    padding-bottom: 1rem;
+
+    @include tablet {
+      padding-bottom: 0;
+    }
+  }
+
+  &__list-item {
+    @include labels-mobile();
+    color: $cloud;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &__list-item--inventory {
+    padding-left: 1rem;
+  }
+
+//   &__list-link {
+//     text-decoration: none;
+//   }
+
+}
+
+a {
+    text-decoration: none;
+}
