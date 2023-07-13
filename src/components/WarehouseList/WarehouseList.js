@@ -46,7 +46,7 @@ const WarehouseList = (props) => {
               <div className="main__card-info">
                 <div className="main__div">
                   <p className="main__div-title">ADDRESS</p>
-                  <p className="main__div-info">{warehouse.address}</p>
+                  <p className="main__div-info">{`${warehouse.address}, ${warehouse.city}, ${warehouse.country}`}</p>
                 </div>
                 <div className="main__div">
                   <p className="main__div-title">CONTACT INFORMATION</p>
