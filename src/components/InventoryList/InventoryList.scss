@@ -1,0 +1,104 @@
+@use "../../styles/partials/resets" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+.main{
+    color: $instock-black;
+    background-color: $light-grey;
+
+    &__section{
+        border-top: 1px solid $cloud;
+    }
+
+    &__card{
+
+        &-info{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__div{
+        width: 50%;
+        margin: 1rem 1rem 0 1rem;
+        @include body-medium-mobile;
+
+        &-title{
+            @include body-small-mobile;
+            font-weight: 600;
+            color: $slate;
+        }
+
+        &-link{
+
+            &-chevron{
+                position: absolute;
+                left: 5.033125rem; 
+            }
+        }
+
+        &-info{
+
+        }
+
+
+    }
+    &__buttons{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 1rem 0 1rem;
+    padding-bottom: 1rem;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.search{
+    width: 100%;
+    padding: 0 1rem;
+    margin: 1rem 0;
+
+    &__container{
+        display: flex;
+        justify-content: center;
+    }
+    &__bar{
+        width: 100%;
+        height: 36px;
+        border-radius: 20px;
+        border: 1px solid $cloud;
+
+        &-image{
+            position: absolute;
+            right: 1.8rem;
+            top: 1.4rem;
+        }
+        
+        &::placeholder{
+            position: relative;
+            left: 1rem;
+            color: $slate;
+        }
+    }
+}
+
+.addition{
+    width: 100%;
+    height: 36px;
+    display: flex;
+    align-items: center;
+
+    &__button{
+        color: $white;
+    }
+
+    &__container{
+        margin: 0 1rem 1rem 1rem;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        background-color: $instock-indigo;
+    }
+}

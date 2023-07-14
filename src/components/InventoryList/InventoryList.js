@@ -1,3 +1,4 @@
+import "./InventoryList.scss"
 import { Link } from "react-router-dom";
 import editIcon from "../../assets/images/Icons/edit-24px.svg";
 import deleteIcon from "../../assets/images/Icons/delete_outline-24px.svg";
@@ -14,7 +15,11 @@ const InventoryList = (props) => {
             placeholder="Search..."
             className="search__bar"
           ></input>
-          <img src={searchIcon} className="search__bar-image" alt="search bar icon"/>
+          <img
+            src={searchIcon}
+            className="search__bar-image"
+            alt="search bar icon"
+          />
         </div>
       </section>
       <container className="addition__container">
@@ -33,7 +38,11 @@ const InventoryList = (props) => {
                   <p className="main__div-title">INVENTORY ITEM</p>
                   <Link key={inventory.id} to={`/inventory/${inventory.id}`}>
                     <span className="main__div-link">{`${inventory.item_name}`}</span>
-                    <img className="main__div-link-chevron" src={chevron} alt="right facing chevron"></img>
+                    <img
+                      className="main__div-link-chevron"
+                      src={chevron}
+                      alt="right facing chevron"
+                    ></img>
                   </Link>
                 </div>
                 <div className="main__div">
@@ -51,24 +60,31 @@ const InventoryList = (props) => {
                   <p className="main__div-info">{inventory.quantity}</p>
                 </div>
               </div>
-              {/* <div className="main__div">
-                  <p className="main__div-title">WAREHOUSE</p>
-                  <p className="main__div-info">{warehouse.warehouse_name}</p>
-                </div> */}
-              <div className="main__buttons">
+              <div className="main__div">
+                 <p className="main__div-title">WAREHOUSE</p>
+                  <p className="main__div-info">{inventory.warehouse_name}</p>
+              </div>
+               <div className="main__buttons">
+                 <Link>
+                   <img src={deleteIcon} alt="delete icon" />
+                 </Link>
                 <Link>
-                  <img src={deleteIcon} alt="delete icon"/>
-                </Link>
-                <Link>
-                  <img src={editIcon}  alt="edit icon"/>
+                  <img src={editIcon} alt="edit icon" />
                 </Link>
               </div>
             </div>
+
           </section>
         );
       })}
+            
+     
+          
+     
+              
+      
     </main>
   );
 };
 
-export default InventoryList
+export default InventoryList;
