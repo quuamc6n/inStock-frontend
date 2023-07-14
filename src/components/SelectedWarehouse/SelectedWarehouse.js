@@ -1,15 +1,13 @@
-import SelectedWarehouseInventory from "../SelectedWarehouseInventory/SelectedWarehouseInventory"
+import SelectedWarehouseInventory from "../SelectedWarehouseInventory/SelectedWarehouseInventory";
+import WarehouseDetails from "../WarehouseDetails/WarehouseDetails";
 
 const SelectedWarehouse = () => {
   return (
     <div>
-      <h3>warehouse details</h3>
-      <p>Address</p>
-      <p>Contact Information</p>
-      <p>Warehouse Details</p>
+      <WarehouseDetails/>
       <SelectedWarehouseInventory />
     </div>
   );
-}
+};
 
-export default SelectedWarehouse
+export default SelectedWarehouse;
