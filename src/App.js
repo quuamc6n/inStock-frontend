@@ -1,15 +1,17 @@
-import './App.scss';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import "./App.scss";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Warehouses from "./pages/Warehouses/Warehouses";
 import SelectedWarehouse from './components/SelectedWarehouse/SelectedWarehouse';
 import Inventory from "./pages/Inventory/Inventory";
 import HomePage from "./pages/HomePage/HomePage";
 import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
           <Route path="warehouses" element={<Warehouses />}></Route>
@@ -22,7 +24,7 @@ function App() {
           <Route path="inventory/:inventoryId" element={<Inventory />}></Route>
         </Routes>
       </BrowserRouter>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
