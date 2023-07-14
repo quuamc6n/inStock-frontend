@@ -7,13 +7,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
+  padding: 1.5rem 1rem 5rem 1rem;
   width: 100%;
 
   @include tablet {
     flex-direction: row;
     justify-content: space-between;
-    padding: 1.5rem;
+    padding: 2rem 2rem 6rem 2rem;
+  }
+
+  @include desktop {
+    padding: 2rem 7.5rem 6rem 7.5rem;
   }
 
   &__list {
@@ -28,10 +32,17 @@
   }
 
   &__logo {
-    padding-bottom: 1rem;
+    width: 7.5rem;
+    
+  }
 
+  &__logo-link {
+    margin-bottom: 1.5rem;
+  }
+
+  &__logo-link {
     @include tablet {
-      padding-bottom: 0;
+     margin-bottom: 0;
     }
   }
 
@@ -40,7 +51,7 @@
 
   &__list-item--inventory {
     @include tablet {
-      padding-left: 1rem;
+      padding-left: 2.5rem;
     }
   }
 
@@ -48,10 +59,9 @@
     @include labels-mobile();
     text-decoration: none;
     color: $cloud;
-   
+
     &:hover {
       color: $white;
     }
-
   }
 }
