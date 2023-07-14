@@ -31,22 +31,12 @@
     }
   }
 
-  &__logo {
-    width: 7.5rem;
-    
-  }
-
   &__logo-link {
     margin-bottom: 1.5rem;
-  }
 
-  &__logo-link {
     @include tablet {
-     margin-bottom: 0;
+      margin-bottom: 0;
     }
-  }
-
-  &__list-item {
   }
 
   &__list-item--inventory {
@@ -62,6 +52,11 @@
 
     &:hover {
       color: $white;
+    }
+
+    @include tablet {
+      @include labels-tablet();
+      color: $cloud;
     }
   }
 }
