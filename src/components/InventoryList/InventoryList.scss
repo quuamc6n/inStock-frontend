@@ -6,6 +6,14 @@
     color: $instock-black;
     background-color: $light-grey;
 
+    &__title {
+        @include page-header-mobile();
+    }
+
+    &__search {
+        padding: 2.5rem 1rem 1.5rem 1rem;
+    }
+
     &__section{
         border-top: 1px solid $cloud;
     }
