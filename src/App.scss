@@ -1,1 +1,8 @@
 @use "./styles/partials/resets";
+
+.main-section {
+    margin: -4rem 1rem 1rem 1rem;
+    border: 2px solid red;
+    border-radius: 5px;
+    background-color: white;
+}
