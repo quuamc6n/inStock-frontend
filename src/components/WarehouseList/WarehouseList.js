@@ -2,30 +2,31 @@ import "./WarehouseList.scss";
 import { Link } from "react-router-dom";
 import editIcon from "../../assets/images/Icons/edit-24px.svg";
 import deleteIcon from "../../assets/images/Icons/delete_outline-24px.svg";
-import searchIcon from "../../assets/images/Icons/search-24px.svg";
 import chevron from "../../assets/images/Icons/chevron_right-24px.svg";
 
 
 const WarehouseList = (props) => {
   return (
     <main className="main">
-      <container className="search__container">
-        <div className="search">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="search__bar"
-          ></input>
-          <img src={searchIcon} className="search__bar-image"></img>
-        </div>
-      </container>
-      <container className="addition__container">
-        <Link to={`/warehouses/add`}>
-          <div className="addition">
-            <div className="addition__button">+ Add New Warehouse</div>
+      <section className="search__container">
+        <h1 className="main__header">Warehouses</h1>
+        <article className="search__sub-container">
+          <div className="search">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="search__bar"
+            ></input>
           </div>
-        </Link>
-      </container>
+        </article>
+        <article className="addition__container">
+          <Link to={`/warehouses/add`}>
+            <div className="addition">
+              <div className="addition__button">+ Add New Warehouse</div>
+            </div>
+          </Link>
+        </article>
+      </section>
       {props.warehouses.map((warehouse) => {
         return (
           <section className="main__section">
@@ -34,8 +35,14 @@ const WarehouseList = (props) => {
                 <div className="main__div">
                   <p className="main__div-title">WAREHOUSE</p>
                   <Link key={warehouse.id} to={`/warehouses/${warehouse.id}`}>
-                    <span className="main__div-link">{`${warehouse.warehouse_name}`}</span>
-                    <img className="main__div-link-chevron" src={chevron}></img>
+                    <div className="main__div-container">
+                      <p className="main__div-link">{`${warehouse.warehouse_name}`}</p>
+                      <img
+                        className="main__div-link-chevron"
+                        src={chevron}
+                        alt="Chevron Right"
+                      ></img>
+                    </div>
                   </Link>
                 </div>
                 <div className="main__div">
@@ -56,10 +63,10 @@ const WarehouseList = (props) => {
               </div>
               <div className="main__buttons">
                 <Link>
-                  <img src={deleteIcon}></img>
+                  <img src={deleteIcon} alt="Delete Icon"></img>
                 </Link>
                 <Link>
-                  <img src={editIcon}></img>
+                  <img src={editIcon} alt="Edit Icon"></img>
                 </Link>
               </div>
             </div>
