@@ -1,0 +1,133 @@
+@use "../../styles/partials/resets" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/breakpoints" as *;
+
+.warehouse-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid $cloud;
+
+  @include tablet {
+    padding: 2rem;
+  }
+
+  &__box {
+    display: flex;
+  }
+
+  &__icon {
+    padding-right: 0.5rem;
+  }
+
+  &__name {
+    @include page-header-mobile;
+
+    @include tablet {
+      @include page-header-tablet;
+    }
+  }
+
+  &__edit-button {
+    display: flex;
+    color: $white;
+    background-color: $instock-indigo;
+    border: none;
+    border-radius: 20px;
+    height: 36px;
+    width: 36px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+
+    @include tablet {
+      width: auto;
+      padding: 0 1rem;
+      height: 38px;
+    }
+
+    &__icon {
+      // width: 24px;
+      // height: 24px;
+      // margin-right: 0.5rem;
+    }
+
+    &__text {
+      display: none;
+      @include body-medium-mobile;
+      color: $white;
+
+      @include tablet {
+        display: block;
+        padding-left: 0.5rem;
+      }
+    }
+  }
+}
+
+.warehouse-info {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid $cloud;
+
+  @include tablet {
+    flex-direction: row;
+    padding: 2rem;
+  }
+
+  &__address-container {
+    padding-bottom: 1.5rem;
+
+    @include tablet {
+      width: 33%;
+      padding-right: 5rem;
+      padding-bottom: 0;
+      border-right: 1px solid $cloud;
+    }
+  }
+
+  &__contact-container {
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+      width: 66%;
+      justify-content: flex-start;
+      padding-left: 2.5rem;
+    }
+
+    &__name {
+      //   width: 50%;
+      padding-right: 0.5rem;
+      //   justify-self: flex-start;
+
+      @include tablet {
+        padding-right: 2rem;
+      }
+    }
+
+    &__info {
+      //   width: 50%;
+      padding-left: 0.5rem;
+      // justify-self: flex-end;
+    }
+  }
+}
+
+.table-header {
+  @include table-header-mobile;
+
+  @include tablet {
+    @include table-header-tablet;
+  }
+}
+
+.data-text {
+  @include body-medium-mobile;
+
+  @include tablet {
+    @include body-medium-tablet;
+  }
+}
