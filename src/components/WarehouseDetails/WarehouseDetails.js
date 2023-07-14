@@ -4,8 +4,8 @@ import axios from "axios";
 
 import "./warehousedetails.scss";
 
-import backArrow from "../../assets/icons/arrow_back-24px.svg";
-import whiteEditIcon from "../../assets/icons/white-edit-24px.svg";
+import backArrow from "../../assets/images/Icons/arrow_back-24px.svg";
+import whiteEditIcon from "../../assets/images/Icons/white-edit-24px.svg";
 
 function WarehouseDetails() {
   const { warehouseId } = useParams();
