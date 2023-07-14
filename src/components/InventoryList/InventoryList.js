@@ -50,7 +50,9 @@ const InventoryList = (props) => {
                 </div>
                 <div className="inventory__div">
                   <p className="inventory__div-title">STATUS</p>
+                  <div className="inventory__div-info--container">
                   <p className="inventory__div-info">{inventory.status}</p>
+                  </div>
                 </div>
               </div>
               <div className="inventory__card-info">
@@ -63,10 +65,19 @@ const InventoryList = (props) => {
                   <p className="inventory__div-info">{inventory.quantity}</p>
                 </div>
               </div>
-              <div className="inventory__div">
-                <p className="inventory__div-title">WAREHOUSE</p>
-                <p className="inventory__div-info">{inventory.warehouse_name}</p>
+              <div className="inventory__card-info">
+                <div className="inventory__div inventory__div--ghost">
+                  <p className="inventory__div-title"></p>
+                  <p className="inventory__div-info"></p>
+                </div>
+                <div className="inventory__div">
+                  <p className="inventory__div-title">WAREHOUSE</p>
+                  <p className="inventory__div-info">
+                    {inventory.warehouse_name}
+                  </p>
+                </div>
               </div>
+
               <div className="inventory__buttons">
                 <Link>
                   <img src={deleteIcon} alt="delete icon" />
