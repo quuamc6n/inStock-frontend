@@ -2,7 +2,7 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variables" as *;
 
-.main{
+.inventory{
     color: $instock-black;
     background-color: $light-grey;
 
@@ -65,7 +65,7 @@ a {
 
 .search{
     width: 100%;
-    padding: 0 1rem;
+    // padding: 0 1rem;
     margin: 1rem 0;
 
     &__container{

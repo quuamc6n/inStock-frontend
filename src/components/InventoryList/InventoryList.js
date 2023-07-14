@@ -7,9 +7,9 @@ import chevron from "../../assets/images/Icons/chevron_right-24px.svg";
 
 const InventoryList = (props) => {
   return (
-    <main className="main">
-      <section className="main__search">
-        <h1 className="main__title">Inventory</h1>
+    <main className="inventory">
+      <section className="inventory__search">
+        <h1 className="inventory__title">Inventory</h1>
         <section className="search__container">
           <div className="search">
             <input
@@ -34,40 +34,40 @@ const InventoryList = (props) => {
       </section>
       {props.inventories.map((inventory) => {
         return (
-          <section className="main__section">
-            <div className="main__card">
-              <div className="main__card-info">
-                <div className="main__div">
-                  <p className="main__div-title">INVENTORY ITEM</p>
+          <section className="inventory__section">
+            <div className="inventory__card">
+              <div className="inventory__card-info">
+                <div className="inventory__div">
+                  <p className="inventory__div-title">INVENTORY ITEM</p>
                   <Link key={inventory.id} to={`/inventory/${inventory.id}`}>
-                    <span className="main__div-link">{`${inventory.item_name}`}</span>
+                    <span className="inventory__div-link">{`${inventory.item_name}`}</span>
                     <img
-                      className="main__div-link-chevron"
+                      className="inventory__div-link-chevron"
                       src={chevron}
                       alt="right facing chevron"
                     ></img>
                   </Link>
                 </div>
-                <div className="main__div">
-                  <p className="main__div-title">STATUS</p>
-                  <p className="main__div-info">{inventory.status}</p>
+                <div className="inventory__div">
+                  <p className="inventory__div-title">STATUS</p>
+                  <p className="inventory__div-info">{inventory.status}</p>
                 </div>
               </div>
-              <div className="main__card-info">
-                <div className="main__div">
-                  <p className="main__div-title">CATEGORY</p>
-                  <p className="main__div-info">{inventory.category}</p>
+              <div className="inventory__card-info">
+                <div className="inventory__div">
+                  <p className="inventory__div-title">CATEGORY</p>
+                  <p className="inventory__div-info">{inventory.category}</p>
                 </div>
-                <div className="main__div">
-                  <p className="main__div-title">QTY</p>
-                  <p className="main__div-info">{inventory.quantity}</p>
+                <div className="inventory__div">
+                  <p className="inventory__div-title">QTY</p>
+                  <p className="inventory__div-info">{inventory.quantity}</p>
                 </div>
               </div>
-              <div className="main__div">
-                <p className="main__div-title">WAREHOUSE</p>
-                <p className="main__div-info">{inventory.warehouse_name}</p>
+              <div className="inventory__div">
+                <p className="inventory__div-title">WAREHOUSE</p>
+                <p className="inventory__div-info">{inventory.warehouse_name}</p>
               </div>
-              <div className="main__buttons">
+              <div className="inventory__buttons">
                 <Link>
                   <img src={deleteIcon} alt="delete icon" />
                 </Link>
