@@ -49,13 +49,29 @@
     &-link {
     }
 
-    &-info--status {
-      color: $green;
+    &-info--outstock {
+      //   color: $red;
       // padding-left: 0.1rem;
       // padding-right: 0.1rem;
     }
 
-    &-info--container {
+    &-info--outstock-container {
+      color: $red;
+      border: 1px;
+      border-radius: 20px;
+      background: rgba(201, 69, 21, 0.07);
+      width: 3.5rem;
+      text-align: center;
+    }
+
+    &-info--instock {
+      // padding-left: 0.1rem;
+      // padding-right: 0.1rem;
+    }
+
+    &-info--instock-container {
+      color: $green;
+
       border: 1px;
       border-radius: 20px;
       background: rgba(21, 132, 99, 0.07);

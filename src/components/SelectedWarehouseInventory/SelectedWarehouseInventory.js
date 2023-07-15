@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import editIcon from "../../assets/images/Icons/edit-24px.svg";
 import deleteIcon from "../../assets/images/Icons/delete_outline-24px.svg";
 import chevron from "../../assets/images/Icons/chevron_right-24px.svg";
+import classNames from "classnames";
 
 const SelectedWarehouseInventory = (props) => {
   const { warehouseId } = useParams();
@@ -38,7 +39,10 @@ const SelectedWarehouseInventory = (props) => {
             <div className="selected-warehouse__card-info">
               <div className="selected-warehouse__div">
                 <p className="selected-warehouse__div-title">INVENTORY ITEM</p>
-                <Link key={inventory.id} to={`/inventory/${inventory.id}`}>
+                <Link
+                  key={warehouseInventory.id}
+                  to={`/inventory/${warehouseInventory.id}`}
+                >
                   <div className="selected-warehouse__div-container">
                     <p className="selected-warehouse__div-link">{`${warehouseInventory.item_name}`}</p>
                     <img
@@ -51,9 +55,18 @@ const SelectedWarehouseInventory = (props) => {
               </div>
               <div className="selected-warehouse__div">
                 <p className="selected-warehouse__div-title">STATUS</p>
-                <div className="selected-warehouse__div-info--container">
-                  <p className="selected-warehouse__div-info selected-warehouse__div-info--status">
-                    {warehouseInventory.status}
+                <div
+                  className={classNames(
+                    "selected-warehouse__div-info--outstock-container",
+                    {
+                      "selected-warehouse__div-info--instock-container":
+                        warehouseInventory.quantity,
+                    }
+                  )}
+                >
+                  {/* {" "} */}
+                  <p className="selected-warehouse__div-info selected-warehouse__div-info--outstock">
+                    {warehouseInventory.status.toUpperCase()}
                   </p>
                 </div>
               </div>
