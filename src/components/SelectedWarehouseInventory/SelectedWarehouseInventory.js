@@ -1,4 +1,4 @@
-import "./SelectedWarehouseInventory.scss"
+import "./SelectedWarehouseInventory.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -10,7 +10,7 @@ import chevron from "../../assets/images/Icons/chevron_right-24px.svg";
 const SelectedWarehouseInventory = (props) => {
   const { warehouseId } = useParams();
   const [warehouseInventories, setWarehouseInventory] = useState(null);
- 
+
   useEffect(() => {
     const fetchWarehouseInventory = async () => {
       try {
@@ -61,11 +61,15 @@ const SelectedWarehouseInventory = (props) => {
             <div className="selected-warehouse__card-info">
               <div className="selected-warehouse__div">
                 <p className="selected-warehouse__div-title">CATEGORY</p>
-                <p className="selected-warehouse__div-info">{warehouseInventory.category}</p>
+                <p className="selected-warehouse__div-info">
+                  {warehouseInventory.category}
+                </p>
               </div>
               <div className="selected-warehouse__div">
                 <p className="selected-warehouse__div-title">QTY</p>
-                <p className="selected-warehouse__div-info">{warehouseInventory.quantity}</p>
+                <p className="selected-warehouse__div-info">
+                  {warehouseInventory.quantity}
+                </p>
               </div>
             </div>
             <div className="selected-warehouse__buttons">
@@ -81,6 +85,6 @@ const SelectedWarehouseInventory = (props) => {
       })}
     </section>
   );
-}
+};
 
-export default SelectedWarehouseInventory
+export default SelectedWarehouseInventory;
