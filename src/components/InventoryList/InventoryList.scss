@@ -49,19 +49,32 @@
     &-link {
     }
 
-    &-info--status {
-      color: $green;
-      // padding-left: 0.1rem;
-      // padding-right: 0.1rem;
-    }
-
-    &-info--container {
-      border: 1px;
-      border-radius: 20px;
-      background: rgba(21, 132, 99, 0.07);
-      width: 3.5rem;
-      text-align: center;
-    }
+    &-info--outstock {
+     
+      }
+  
+      &-info--outstock-container {
+        color: $red;
+        border: 1px;
+        border-radius: 20px;
+        background: rgba(201, 69, 21, 0.07);
+        width: 3.5rem;
+        text-align: center;
+      }
+  
+      &-info--instock {
+         
+        }
+    
+        &-info--instock-container {
+          color: $green;
+  
+          border: 1px;
+          border-radius: 20px;
+          background: rgba(21, 132, 99, 0.07);
+          width: 3.5rem;
+          text-align: center;
+        }
   }
 
   &__buttons {
