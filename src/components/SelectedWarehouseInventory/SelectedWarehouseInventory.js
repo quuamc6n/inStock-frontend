@@ -64,7 +64,7 @@ const SelectedWarehouseInventory = (props) => {
                     }
                   )}
                 >
-                  {/* {" "} */}
+                 
                   <p className="selected-warehouse__div-info selected-warehouse__div-info--outstock">
                     {warehouseInventory.status.toUpperCase()}
                   </p>

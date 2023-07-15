@@ -6,21 +6,12 @@
   color: $instock-black;
   background-color: $light-grey;
 
-  &__container {
-    padding: 2rem 1rem 1.5rem 1rem;
-  }
-
   &__title {
     @include page-header-mobile();
   }
 
-  &__search-container {
-    display: flex;
-    justify-content: center;
-  }
-
   &__card {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     border-top: 1px solid $cloud;
 
     &-info {
@@ -50,7 +41,7 @@
     }
 
     &-info--outstock {
-      //   color: $red;
+    //   color: $red;
       // padding-left: 0.1rem;
       // padding-right: 0.1rem;
     }
@@ -65,19 +56,22 @@
     }
 
     &-info--instock {
-      // padding-left: 0.1rem;
-      // padding-right: 0.1rem;
-    }
+       
+        // padding-left: 0.1rem;
+        // padding-right: 0.1rem;
+      }
+  
+      &-info--instock-container {
+        color: $green;
 
-    &-info--instock-container {
-      color: $green;
+        border: 1px;
+        border-radius: 20px;
+        background: rgba(21, 132, 99, 0.07);
+        width: 3.5rem;
+        text-align: center;
+      }
 
-      border: 1px;
-      border-radius: 20px;
-      background: rgba(21, 132, 99, 0.07);
-      width: 3.5rem;
-      text-align: center;
-    }
+
   }
 
   &__buttons {
