@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import editIcon from "../../assets/images/Icons/edit-24px.svg";
 import deleteIcon from "../../assets/images/Icons/delete_outline-24px.svg";
 import chevron from "../../assets/images/Icons/chevron_right-24px.svg";
+import classNames from "classnames";
 
 const InventoryList = (props) => {
   return (
@@ -19,9 +20,9 @@ const InventoryList = (props) => {
           </div>
         </section>
         <div className="inventory__button-container">
-          <Link>
+          <Link className="inventory__link">
             <div className="inventory__button-sub-container">
-              <div className="inventory__button">+ Add New Item</div>
+              <p className="inventory__button">+ Add New Item</p>
             </div>
           </Link>
         </div>
@@ -32,7 +33,7 @@ const InventoryList = (props) => {
             <div className="inventory__card-info">
               <div className="inventory__div">
                 <p className="inventory__div-title">INVENTORY ITEM</p>
-                <Link key={inventory.id} to={`/inventory/${inventory.id}`}>
+                <Link className="inventory__link" key={inventory.id} to={`/inventory/${inventory.id}`}>
                   <div className="inventory__div-container">
                     <p className="inventory__div-link">{`${inventory.item_name}`}</p>
                     <img
@@ -45,9 +46,18 @@ const InventoryList = (props) => {
               </div>
               <div className="inventory__div">
                 <p className="inventory__div-title">STATUS</p>
-                <div className="inventory__div-info--container">
-                  <p className="inventory__div-info inventory__div-info--status">
-                    {inventory.status}
+                <div
+                  className={classNames(
+                    "inventory__div-info inventory__div-info--outstock-container",
+                    {
+                      "inventory__div-info--instock-container":
+                        inventory.quantity,
+                    }
+                  )}
+                >
+                 
+                  <p className="inventory__div-info--outstock">
+                    {inventory.status.toUpperCase()}
                   </p>
                 </div>
               </div>
@@ -76,10 +86,10 @@ const InventoryList = (props) => {
             </div>
 
             <div className="inventory__buttons">
-              <Link>
+              <Link className="inventory__link">
                 <img src={deleteIcon} alt="delete icon" />
               </Link>
-              <Link>
+              <Link className="inventory__link">
                 <img src={editIcon} alt="edit icon" />
               </Link>
             </div>

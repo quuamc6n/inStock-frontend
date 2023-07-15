@@ -7,7 +7,7 @@
   background-color: $light-grey;
 
   &__container {
-    padding: 2rem 1rem 1.5rem 1rem;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
   }
 
   &__title {
@@ -20,7 +20,7 @@
   }
 
   &__card {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     border-top: 1px solid $cloud;
 
     &-info {
@@ -46,35 +46,35 @@
       padding-bottom: 0.3rem;
     }
 
-    &-link {
+    &-info--outstock-container {
+      @include body-small-mobile();
+      color: $red;
+      border: 1px;
+      border-radius: 20px;
+      background: rgba(201, 69, 21, 0.07);
+      width: 5rem;
+      padding-top: 0.2rem;
+      padding-bottom: 0.2rem;
+      font-weight: 600;
+      text-align: center;
     }
 
-    &-info--outstock {
-     
-      }
-  
-      &-info--outstock-container {
-        color: $red;
-        border: 1px;
-        border-radius: 20px;
-        background: rgba(201, 69, 21, 0.07);
-        width: 3.5rem;
-        text-align: center;
-      }
-  
-      &-info--instock {
-         
-        }
-    
-        &-info--instock-container {
-          color: $green;
-  
-          border: 1px;
-          border-radius: 20px;
-          background: rgba(21, 132, 99, 0.07);
-          width: 3.5rem;
-          text-align: center;
-        }
+    &-info--instock-container {
+      @include body-small-mobile();
+      color: $green;
+      border: 1px;
+      border-radius: 20px;
+      background: rgba(21, 132, 99, 0.07);
+      width: 3.5rem;
+      padding-top: 0.2rem;
+      padding-bottom: 0.2rem;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
   }
 
   &__buttons {
@@ -90,6 +90,7 @@
   }
 
   &__button {
+    @include labels-mobile();
     color: $white;
   }
 
@@ -114,14 +115,11 @@
       background-position: center right 5%;
 
       &::placeholder {
+        @include labels-mobile();
         position: relative;
         left: 1rem;
         color: $slate;
       }
     }
   }
-}
-
-a {
-  text-decoration: none;
 }
