@@ -35,7 +35,7 @@ const AddWarehouse = () => {
 
     try{const response = await newWarehouse(warehouseData);
       if(response.status === 200){
-        alert("successfull");
+        alert("successful");
       } else{
         alert("failed");
       }
