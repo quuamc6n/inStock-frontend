@@ -3,8 +3,7 @@
 @use "../../styles/partials/typography" as *;
 
 .add-warehouse {
-  
-    &__container {
+  &__container {
     padding: 1.5rem 1rem 1.5rem 1rem;
     display: flex;
     border-bottom: 1px solid $cloud;
@@ -13,11 +12,9 @@
   &__title {
     @include page-header-mobile();
     padding-left: 0.3rem;
-
   }
 
   &__form-container {
-   
     border-bottom: 1px solid $cloud;
   }
 
@@ -33,7 +30,6 @@
 
   &__form-container--contact {
     padding: 0 1rem 1rem 1rem;
-  
   }
 
   &__subtitle {
@@ -43,8 +39,6 @@
   &__subtitle--contact {
     padding-top: 1rem;
     padding-bottom: 1.5rem;
-
-
   }
 
   &__form-title {

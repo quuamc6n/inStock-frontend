@@ -43,23 +43,6 @@ const AddWarehouse = () => {
     catch(error){console.error(error)}
   }
 
-    // axios
-    //   .post(`http://localhost:8080/warehouses`, {
-    //     warehouseData
-        // name,
-        // address,
-        // city,
-        // country,
-        // contactName,
-        // positon,
-        // phone,
-        // email,
-      // })
-      // .catch((error) => console.error(error));
-
-    // alert("Warehouse added");
-  
-
   return (
     <section className="add-warehouse">
       <div className="add-warehouse__container">
