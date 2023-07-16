@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import "./warehousedetails.scss";
 
@@ -34,13 +35,21 @@ function WarehouseDetails() {
     <section>
       <div className="warehouse-header">
         <div className="warehouse-header__box">
-          <img src={backArrow} className="warehouse-header__icon" />
+          <Link to={`/warehouses`} className="warehouse-header__icon">
+            <img src={backArrow}  />
+          </Link>
           <h1 className="warehouse-header__name">{warehouse.warehouse_name}</h1>
         </div>
-        <button className="warehouse-header__edit-button">
-          <img src={whiteEditIcon} className="warehouse-header__edit-button__icon" alt="Edit button" />
-          <p className="warehouse-header__edit-button__text">Edit</p>
-        </button>
+        <Link to={`/warehouses/:warehouseId/edit`}>
+          <button className="warehouse-header__edit-button">
+            <img
+              src={whiteEditIcon}
+              className="warehouse-header__edit-button__icon"
+              alt="Edit button"
+            />
+            <p className="warehouse-header__edit-button__text">Edit</p>
+          </button>
+        </Link>
       </div>
       <article className="warehouse-info">
         <div className="warehouse-info__address-container">
