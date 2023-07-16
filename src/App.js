@@ -6,6 +6,7 @@ import Inventory from "./pages/Inventory/Inventory";
 import HomePage from "./pages/HomePage/HomePage";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
+import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
             <Route path="inventory" element={<Inventory />}></Route>
             <Route
               path="inventory/:inventoryId"
-              element={<Inventory />}
+              element={<InventoryItemDetails />}
             ></Route>
           </Routes>
         </main>
