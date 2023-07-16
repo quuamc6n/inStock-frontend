@@ -1,0 +1,67 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/typography" as *;
+
+.add-warehouse {
+  
+    &__container {
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    display: flex;
+    border-bottom: 1px solid $cloud;
+  }
+
+  &__title {
+    @include page-header-mobile();
+    padding-left: 0.3rem;
+
+  }
+
+  &__form-container {
+   
+    border-bottom: 1px solid $cloud;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__form-sub-container {
+    padding: 0 1rem 1rem 1rem;
+    border-bottom: 1px solid $cloud;
+  }
+
+  &__form-container--contact {
+    padding: 0 1rem 1rem 1rem;
+  
+  }
+
+  &__subtitle {
+    padding: 1rem 1rem 1.5rem 1rem;
+  }
+
+  &__subtitle--contact {
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+
+
+  }
+
+  &__form-title {
+    padding-bottom: 0.2rem;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__form-input {
+    border-radius: 20px;
+    border: 1px solid $cloud;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-left: 0.7rem;
+    margin-bottom: 1rem;
+  }
+}
