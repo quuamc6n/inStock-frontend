@@ -8,7 +8,7 @@ import deleteIcon from "../../assets/images/Icons/delete_outline-24px.svg";
 import chevron from "../../assets/images/Icons/chevron_right-24px.svg";
 import classNames from "classnames";
 
-const SelectedWarehouseInventory = (props) => {
+const SelectedWarehouseInventory = () => {
   const { warehouseId } = useParams();
   const [warehouseInventories, setWarehouseInventory] = useState(null);
 
@@ -39,7 +39,7 @@ const SelectedWarehouseInventory = (props) => {
             <div className="selected-warehouse__card-info">
               <div className="selected-warehouse__div">
                 <p className="selected-warehouse__div-title">INVENTORY ITEM</p>
-                <Link
+                <Link className="selected-warehouse__link"
                   key={warehouseInventory.id}
                   to={`/inventory/${warehouseInventory.id}`}
                 >
@@ -86,10 +86,10 @@ const SelectedWarehouseInventory = (props) => {
               </div>
             </div>
             <div className="selected-warehouse__buttons">
-              <Link>
+              <Link className="selected-warehouse__link">
                 <img src={deleteIcon} alt="delete icon" />
               </Link>
-              <Link>
+              <Link className="selected-warehouse__link">
                 <img src={editIcon} alt="edit icon" />
               </Link>
             </div>
