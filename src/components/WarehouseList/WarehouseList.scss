@@ -1,10 +1,14 @@
-@use "../../styles/partials/resets" as *;
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/breakpoints" as *;
 
 .main{
     color: $instock-black;
     // background-color: $light-grey;
+
+    &__header{
+        @include page-header-mobile;
+    }
 
     &__section{
         border-top: 1px solid $cloud;
@@ -23,6 +27,11 @@
         margin: 1rem 1rem 0 1rem;
         @include body-medium-mobile;
 
+        &-container{
+            display: flex;
+            align-items: center;
+        }
+
         &-title{
             @include body-small-mobile;
             font-weight: 600;
@@ -31,10 +40,10 @@
 
         &-link{
 
-            &-chevron{
-                position: absolute;
-                left: 5.033125rem; //Exactly 4px to the right as style guide asks
-            }
+            // &-chevron{
+            //     position: absolute;
+            //     left: 5.033125rem; //Exactly 4px to the right as style guide asks
+            // }
         }
 
         &-info{
@@ -57,10 +66,13 @@ a {
 
 .search{
     width: 100%;
-    padding: 0 1rem;
     margin: 1rem 0;
 
     &__container{
+        padding: 2.5rem 1rem 1.5rem 1rem;
+    }
+
+    &__sub-container{
         display: flex;
         justify-content: center;
     }
@@ -69,12 +81,9 @@ a {
         height: 36px;
         border-radius: 20px;
         border: 1px solid $cloud;
-
-        &-image{
-            position: absolute;
-            right: 1.8rem;
-            top: 1.4rem;
-        }
+        background-image: url("../../assets/images/Icons/search-24px.svg");
+        background-repeat: no-repeat;
+        background-position: center right 5%;
         
         &::placeholder{
             position: relative;
@@ -95,7 +104,7 @@ a {
     }
 
     &__container{
-        margin: 0 1rem 1rem 1rem;
+        margin-bottom: 1rem;
         border-radius: 20px;
         display: flex;
         justify-content: center;

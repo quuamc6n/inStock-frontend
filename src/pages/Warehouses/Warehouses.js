@@ -1,9 +1,8 @@
-import WarehouseList from "../../components/WarehouseList/WarehouseList"
+import WarehouseList from "../../components/WarehouseList/WarehouseList";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
 const Warehouses = () => {
-
   const [warehouses, setWarehouses] = useState([]);
   // Need early return or async -> await
   useEffect(() => {
@@ -14,9 +13,9 @@ const Warehouses = () => {
 
   return (
     <div>
-        <WarehouseList warehouses={warehouses} />
+      <WarehouseList warehouses={warehouses} />
     </div>
-  )
-}
+  );
+};
 
-export default Warehouses
+export default Warehouses;
