@@ -79,7 +79,7 @@ const WarehouseList = (props) => {
                 </div>
               </div>
               <div className="main__buttons">
-                <button onClick={() => openDeleteModal(warehouse.warehouse_name, warehouse.id)}>
+                <button onClick={() => openDeleteModal(warehouse.warehouse_name, warehouse.id)} className="main__buttons--delete">
                   <img src={deleteIcon} alt="Delete Icon"></img>
                 </button>
                 <Link>
