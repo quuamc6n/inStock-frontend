@@ -24,7 +24,7 @@
   overflow-y: hidden;
 }
 
-.modal-content {
+.delete-modal {
   background-color: #fff;
   padding: 1.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -35,59 +35,89 @@
   flex-direction: column;
   justify-content: space-between;
 
-  @include desktop {
+  @include tablet {
     background-color: #fff;
     padding: 20px;
     border-radius: 4px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    width: 50%;
-    height: 200px;
+    width: 100%;
+    margin: 0 3rem;
+    height: auto;
     margin-top: 11.5625rem;
   }
-}
 
-.modal h2 {
-  margin-top: 0;
-}
+  @include desktop {
+    margin: 11.5625rem 20rem 0 20rem;
+  }
 
-.modal p {
-  margin-bottom: 20px;
-}
-
-.modal button {
-  margin-right: 10px;
-}
-
-.delete-modal__container {
+  &__box {
     display: flex;
     flex-direction: column;
-}
+  }
 
-.delete-modal__close {
+  &__content {
+    @include desktop {
+      padding: 0 4rem 1rem 4rem;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    padding-bottom: 1.5rem;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+
+    @include tablet {
+        margin-bottom: 2.5rem;
+    }
+  }
+
+  &__close {
     align-self: flex-end;
     width: 24px;
     height: 24px;
     margin-bottom: 1.5rem;
-}
 
-.delete-modal__buttons {
+    @include tablet {
+      margin: 0;
+    }
+  }
+
+  &__buttons {
     display: flex;
     align-items: center;
-}
 
-.delete-modal__cancel {
-width: 50%;
-height: 36px;
-border: 1px solid grey;
-background-color: transparent;
-border-radius: 20px;
-}
+    @include tablet {
+      justify-content: flex-end;
+    }
+  }
 
-.delete-modal__delete {
+  &__cancel {
+    width: 50%;
+    height: 36px;
+    border: 1px solid grey;
+    background-color: transparent;
+    border-radius: 20px;
+    margin-right: 0.5rem;
+
+    @include tablet {
+      width: 15%;
+    }
+  }
+
+  &__delete {
     width: 50%;
     height: 36px;
     border: none;
-    background-color: red;
-    color: white;
+    background-color: $red;
+    color: $white;
     border-radius: 20px;
+    margin-left: 0.5rem;
+
+    @include tablet {
+      width: 15%;
+    }
+  }
 }

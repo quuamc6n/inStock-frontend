@@ -9,21 +9,19 @@ import DeleteWarehouse from "../DeleteWarehouse/DeleteWarehouse";
 const WarehouseList = (props) => {
   const [DeleteModalOpen, setDeleteModalOpen] = useState(false);
   const [selectedWarehouse, setSelectedWarehouse] = useState(null);
+  const [selectedWarehouseId, setSelectedWarehouseId] = useState(null);
 
-  const openDeleteModal = (warehouseName) => {
+  const openDeleteModal = (warehouseName, warehouseId) => {
     setSelectedWarehouse(warehouseName);
+    setSelectedWarehouseId(warehouseId);
     setDeleteModalOpen(true);
   };
 
   const closeDeleteModal = () => {
     setSelectedWarehouse(null);
+    setSelectedWarehouseId(null);
     setDeleteModalOpen(false);
   };
-
-  // const handleDelete = () => {
-  //   console.log(`Delete ${selectedWarehouse}`);
-  //   closeModal();
-  // };
 
   return (
     <main className="main">
@@ -81,7 +79,7 @@ const WarehouseList = (props) => {
                 </div>
               </div>
               <div className="main__buttons">
-                <button onClick={() => openDeleteModal(warehouse.warehouse_name)}>
+                <button onClick={() => openDeleteModal(warehouse.warehouse_name, warehouse.id)}>
                   <img src={deleteIcon} alt="Delete Icon"></img>
                 </button>
                 <Link>
@@ -93,8 +91,8 @@ const WarehouseList = (props) => {
               <DeleteWarehouse
                 isOpen={DeleteModalOpen}
                 onClose={closeDeleteModal}
-                // onDelete={handleDelete}
                 warehouseName={selectedWarehouse}
+                warehouseId={selectedWarehouseId}
               />
             </div>{" "}
           </section>
