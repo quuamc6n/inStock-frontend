@@ -33,15 +33,15 @@ const DeleteWarehouse = ({ isOpen, onClose, warehouseName, warehouseId }) => {
               Please confirm that you'd like to delete {warehouseName} from the
               list of warehouses. You won't be able to undo this action.
             </p>
-            <div className="delete-modal__buttons">
-              <button onClick={onClose} className="delete-modal__cancel">
-                Cancel
-              </button>
-              <button onClick={handleDelete} className="delete-modal__delete">
-                Delete
-              </button>
-            </div>
           </div>
+        </div>
+        <div className="delete-modal__buttons">
+          <button onClick={onClose} className="delete-modal__cancel">
+            Cancel
+          </button>
+          <button onClick={handleDelete} className="delete-modal__delete">
+            Delete
+          </button>
         </div>
       </div>
     </section>

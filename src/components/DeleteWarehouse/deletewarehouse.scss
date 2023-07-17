@@ -30,7 +30,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   width: 100%;
   height: 100%;
-  overflow-y: hidden;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -103,7 +103,8 @@
     margin-right: 0.5rem;
 
     @include tablet {
-      width: 15%;
+      // width: 15%;
+      width: 100px;
     }
   }
 
@@ -117,7 +118,8 @@
     margin-left: 0.5rem;
 
     @include tablet {
-      width: 15%;
+      // width: 15%;
+      width: 100px;
     }
   }
 }
