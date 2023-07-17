@@ -1,11 +1,12 @@
-import Warehouses from "../Warehouses/Warehouses"
+import Warehouses from "../Warehouses/Warehouses";
+import DeleteWarehouse from "../../components/DeleteWarehouse/DeleteWarehouse";
 
 const HomePage = () => {
   return (
     <div>
-        <Warehouses />
+      <Warehouses />
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
