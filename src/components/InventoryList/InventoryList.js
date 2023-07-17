@@ -10,21 +10,23 @@ const InventoryList = (props) => {
     <main className="inventory">
       <section className="inventory__container">
         <h1 className="inventory__title">Inventory</h1>
-        <section className="inventory__search-container">
-          <div className="inventory__search">
-            <input
-              type="text"
-              placeholder="Search..."
-              className="inventory__search-bar"
-            ></input>
-          </div>
-        </section>
-        <div className="inventory__button-container">
-          <Link className="inventory__link">
-            <div className="inventory__button-sub-container">
-              <p className="inventory__button">+ Add New Item</p>
+        <div className="inventory__sub-container">
+          <section className="inventory__search-container">
+            <div className="inventory__search">
+              <input
+                type="text"
+                placeholder="Search..."
+                className="inventory__search-bar"
+              ></input>
             </div>
-          </Link>
+          </section>
+          <div className="inventory__button-container">
+            <Link className="inventory__button-link">
+              <div className="inventory__button-sub-container">
+                <p className="inventory__button">+ Add New Item</p>
+              </div>
+            </Link>
+          </div>
         </div>
       </section>
       {props.inventories.map((inventory) => {
@@ -33,7 +35,11 @@ const InventoryList = (props) => {
             <div className="inventory__card-info">
               <div className="inventory__div">
                 <p className="inventory__div-title">INVENTORY ITEM</p>
-                <Link className="inventory__link" key={inventory.id} to={`/inventory/${inventory.id}`}>
+                <Link
+                  className="inventory__link"
+                  key={inventory.id}
+                  to={`/inventory/${inventory.id}`}
+                >
                   <div className="inventory__div-container">
                     <p className="inventory__div-link">{`${inventory.item_name}`}</p>
                     <img
@@ -55,7 +61,6 @@ const InventoryList = (props) => {
                     }
                   )}
                 >
-                 
                   <p className="inventory__div-info--outstock">
                     {inventory.status.toUpperCase()}
                   </p>

@@ -8,6 +8,17 @@
 
   &__container {
     padding: 2rem 1.5rem 1.5rem 1.5rem;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+    }
+  }
+
+  &__sub-container {
+    display: flex;
   }
 
   &__title {
@@ -87,11 +98,25 @@
     height: 36px;
     display: flex;
     align-items: center;
+
+    @include tablet {
+      width: 10rem;
+      height: 1rem;
+    }
   }
 
   &__button {
     @include labels-mobile();
     color: $white;
+  }
+
+  &__button-link {
+    @include tablet {
+      width: 10rem;
+      height: 1rem;
+
+    }
+    
   }
 
   &__button-container {
@@ -113,6 +138,10 @@
       background-image: url("../../assets/images/Icons/search-24px.svg");
       background-repeat: no-repeat;
       background-position: center right 5%;
+
+      @include tablet {
+        width: 12rem;
+      }
 
       &::placeholder {
         @include labels-mobile();
