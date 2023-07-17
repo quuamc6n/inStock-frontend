@@ -20,7 +20,7 @@ const InventoryList = (props) => {
           </div>
         </section>
         <div className="inventory__button-container">
-          <Link className="inventory__link">
+          <Link to="/inventory/add" className="inventory__link">
             <div className="inventory__button-sub-container">
               <p className="inventory__button">+ Add New Item</p>
             </div>

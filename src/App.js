@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
 import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
+import AddItem from "./components/AddItem/AddItem";
 
 function App() {
   return (
@@ -39,6 +40,10 @@ function App() {
             <Route
               path="inventory/:inventoryId"
               element={<InventoryItemDetails />}
+            ></Route>
+            <Route
+              path="inventory/add"
+              element={<AddItem />}
             ></Route>
           </Routes>
         </main>
