@@ -13,12 +13,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-
     }
   }
 
   &__sub-container {
-    display: flex;
+    @include tablet {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &__title {
@@ -30,9 +32,27 @@
     justify-content: center;
   }
 
+  &__list-titles {
+    display: none;
+
+    @include tablet {
+      @include table-header-mobile();
+      padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $light-grey;
+    }
+  }
+
   &__card {
     padding: 1rem 1.5rem;
     border-top: 1px solid $cloud;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
 
     &-info {
       display: flex;
@@ -55,6 +75,10 @@
       font-weight: 600;
       color: $slate;
       padding-bottom: 0.3rem;
+
+      @include tablet {
+        display: none;
+      }
     }
 
     &-info--outstock-container {
@@ -100,8 +124,6 @@
     align-items: center;
 
     @include tablet {
-      width: 10rem;
-      height: 1rem;
     }
   }
 
@@ -112,11 +134,7 @@
 
   &__button-link {
     @include tablet {
-      width: 10rem;
-      height: 1rem;
-
     }
-    
   }
 
   &__button-container {
@@ -124,6 +142,18 @@
     display: flex;
     justify-content: center;
     background-color: $instock-indigo;
+
+    @include tablet {
+      align-items: center;
+      height: 2rem;
+      margin-left: 1rem;
+      width: 8rem;
+    }
+  }
+
+  &__delete-button {
+    border: none;
+    background-color: $white;
   }
 
   &__search {

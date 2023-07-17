@@ -1,7 +1,8 @@
 import "./AddWarehouse.scss";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import backArrow from "../../assets/images/Icons/arrow_back-24px.svg";
+import { Link } from "react-router-dom";
 
 const AddWarehouse = () => {
   const [name, setName] = useState("");
@@ -46,11 +47,13 @@ const AddWarehouse = () => {
   return (
     <section className="add-warehouse">
       <div className="add-warehouse__container">
+        <Link to="warehouses" className="add-warehouse__arrow-link">
         <img
           src={backArrow}
           className="add-warehouse__arrow"
           alt="back arrow"
         />
+        </Link>
         <h1 className="add-warehouse__title">Add New Warehouse</h1>
       </div>
       <section className="add-warehouse__form-container">

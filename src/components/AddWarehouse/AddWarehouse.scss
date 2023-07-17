@@ -7,11 +7,17 @@
     padding: 1.5rem 1rem 1.5rem 1rem;
     display: flex;
     border-bottom: 1px solid $cloud;
+    align-items: flex-end;
+  }
+
+  &__arrow-link {
+    text-decoration: none;
   }
 
   &__title {
     @include page-header-mobile();
     padding-left: 0.3rem;
+    
   }
 
   &__form-container {

@@ -2,11 +2,30 @@ import "./InventoryList.scss";
 import { Link } from "react-router-dom";
 import editIcon from "../../assets/images/Icons/edit-24px.svg";
 import deleteIcon from "../../assets/images/Icons/delete_outline-24px.svg";
+import sortIcon from "../../assets/images/Icons/sort-24px.svg";
 import chevron from "../../assets/images/Icons/chevron_right-24px.svg";
 import classNames from "classnames";
-
+import DeleteInventory from "../DeleteInventory/DeleteInventory";
+import { useState } from "react";
 
 const InventoryList = (props) => {
+  const [deleteInventoryModalOpen, setDeleteInventoryModalOpen] =
+    useState(false);
+  const [selectedInventory, setSelectedInventory] = useState(null);
+  const [selectedInventoryId, setSelectedInventoryId] = useState(null);
+
+  const openDeleteInventoryModal = (inventoryName, inventoryId) => {
+    setSelectedInventory(inventoryName);
+    setSelectedInventoryId(inventoryId);
+    setDeleteInventoryModalOpen(true);
+  };
+
+  const closeDeleteInventoryModal = () => {
+    setSelectedInventory(null);
+    setSelectedInventoryId(null);
+    setDeleteInventoryModalOpen(false);
+  };
+
   return (
     <main className="inventory">
       <section className="inventory__container">
@@ -30,6 +49,44 @@ const InventoryList = (props) => {
           </div>
         </div>
       </section>
+      <div className="inventory__list-titles">
+        <h3 className="inventory__list-title">INVENTORY ITEM</h3>
+        <img
+          className="inventory__list-image"
+          src={sortIcon}
+          alt="drop down arrows icon"
+        />
+
+        <h3 className="inventory__list-title">CATEGORY</h3>
+        <img
+          className="inventory__list-image"
+          src={sortIcon}
+          alt="drop down arrows icon"
+        />
+
+        <h3 className="inventory__list-title">STATUS</h3>
+        <img
+          className="inventory__list-image"
+          src={sortIcon}
+          alt="drop down arrows icon"
+        />
+
+        <h3 className="inventory__list-title">QTY</h3>
+        <img
+          className="inventory__list-image"
+          src={sortIcon}
+          alt="drop down arrows icon"
+        />
+
+        <h3 className="inventory__list-title">WAREHOUSE</h3>
+        <img
+          className="inventory__list-image"
+          src={sortIcon}
+          alt="drop down arrows icon"
+        />
+
+        <h3 className="inventory__list-title">ACTIONS</h3>
+      </div>
       {props.inventories.map((inventory) => {
         return (
           <article className="inventory__card">
@@ -90,15 +147,28 @@ const InventoryList = (props) => {
                 </p>
               </div>
             </div>
-
             <div className="inventory__buttons">
-              <Link className="inventory__link">
+              <button
+                className="inventory__delete-button"
+                onClick={() =>
+                  openDeleteInventoryModal(inventory.item_name, inventory.id)
+                }
+              >
                 <img src={deleteIcon} alt="delete icon" />
-              </Link>
+              </button>
+
               <Link className="inventory__link">
                 <img src={editIcon} alt="edit icon" />
               </Link>
             </div>
+            <div className="inventory__modal-container">
+              <DeleteInventory
+                isOpen={deleteInventoryModalOpen}
+                onClose={closeDeleteInventoryModal}
+                inventoryName={selectedInventory}
+                inventoryId={selectedInventoryId}
+              />
+            </div>{" "}
           </article>
         );
       })}
