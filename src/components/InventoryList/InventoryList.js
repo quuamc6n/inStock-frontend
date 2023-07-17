@@ -5,6 +5,7 @@ import deleteIcon from "../../assets/images/Icons/delete_outline-24px.svg";
 import chevron from "../../assets/images/Icons/chevron_right-24px.svg";
 import classNames from "classnames";
 
+
 const InventoryList = (props) => {
   return (
     <main className="inventory">

@@ -3,9 +3,26 @@ import { Link } from "react-router-dom";
 import editIcon from "../../assets/images/Icons/edit-24px.svg";
 import deleteIcon from "../../assets/images/Icons/delete_outline-24px.svg";
 import chevron from "../../assets/images/Icons/chevron_right-24px.svg";
-
+import React, { useState } from "react";
+import DeleteWarehouse from "../DeleteWarehouse/DeleteWarehouse";
 
 const WarehouseList = (props) => {
+  const [DeleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [selectedWarehouse, setSelectedWarehouse] = useState(null);
+  const [selectedWarehouseId, setSelectedWarehouseId] = useState(null);
+
+  const openDeleteModal = (warehouseName, warehouseId) => {
+    setSelectedWarehouse(warehouseName);
+    setSelectedWarehouseId(warehouseId);
+    setDeleteModalOpen(true);
+  };
+
+  const closeDeleteModal = () => {
+    setSelectedWarehouse(null);
+    setSelectedWarehouseId(null);
+    setDeleteModalOpen(false);
+  };
+
   return (
     <main className="main">
       <section className="search__container">
@@ -62,14 +79,22 @@ const WarehouseList = (props) => {
                 </div>
               </div>
               <div className="main__buttons">
-                <Link>
+                <button onClick={() => openDeleteModal(warehouse.warehouse_name, warehouse.id)}>
                   <img src={deleteIcon} alt="Delete Icon"></img>
-                </Link>
+                </button>
                 <Link>
                   <img src={editIcon} alt="Edit Icon"></img>
                 </Link>
               </div>
             </div>
+            <div className="modal-container">
+              <DeleteWarehouse
+                isOpen={DeleteModalOpen}
+                onClose={closeDeleteModal}
+                warehouseName={selectedWarehouse}
+                warehouseId={selectedWarehouseId}
+              />
+            </div>{" "}
           </section>
         );
       })}

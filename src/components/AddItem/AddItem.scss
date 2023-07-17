@@ -1,0 +1,168 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/typography" as *;
+
+.add-item {
+    @include body-small-mobile;
+  &__container {
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    display: flex;
+    border-bottom: 1px solid $cloud;
+    align-items: flex-start
+  }
+
+  &__arrow{
+    padding-top: 0.5rem;
+  }
+
+  &__title {
+    @include page-header-mobile;
+    font-size: 1.74rem;
+    padding-left: 0.3rem;
+  }
+
+  &__form-container {
+    border-bottom: 1px solid $cloud;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__form-sub-container {
+    padding: 0 1rem 1rem 1rem;
+    border-bottom: 1px solid $cloud;
+  }
+
+  &__subtitle {
+    padding: 1rem 1rem 1.5rem 1rem;
+  }
+
+  &__subtitle--contact {
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+  }
+
+  &__form-title {
+    padding-bottom: 0.2rem;
+    font-weight: 600;
+
+    &-status{
+        padding: 0;
+        margin-bottom: 0.25rem;
+    }
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+
+    &-hidden{
+        display: none;
+    }
+
+    &-status{
+        flex-direction: row;
+        align-items: center;
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+    }
+  }
+
+  &__form-input {
+    border-radius: 20px;
+    border: 1px solid $cloud;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-left: 0.7rem;
+    margin-bottom: 1rem;
+    height: 2rem;
+
+    &-category{
+        margin-bottom: 0.25rem;
+    }
+
+    &-status{
+        margin-bottom: 0;
+        margin-right: 0.5rem;
+    }
+
+    &-textArea {
+      height: 7rem;
+      position: relative;
+      &::placeholder {
+        position: absolute;
+        top: 8px;
+        left: 10px;
+      }
+    }
+  }
+  &__status {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 2rem;
+    margin-top: -0.5rem;
+  }
+  &__button-container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  &__button-cancel{
+    color: $instock-black;
+    background-color: transparent;
+    border-style: none;
+    cursor: pointer;
+    &-div{
+        border: 1px solid $cloud;
+        background-color: $white;
+        border-radius: 20px;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 47%;
+        cursor: pointer;
+    }
+
+  }
+  &__button-add{
+    color: $white;
+    background-color: transparent;
+    border-style: none;
+    cursor: pointer;
+    &-div{
+        background-color: $instock-indigo;
+        border-radius: 20px;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 47%;
+        cursor: pointer;
+    }
+}
+}
+
+.addition{
+    width: 100%;
+    height: 36px;
+
+    &__button{
+        color: $white;
+    }
+
+    &__container{
+
+    }
+}
+
+
+select {
+  appearance: none;
+  background-image: url("../../assets/images/Icons/arrow_drop_down-24px.svg");
+  background-repeat: no-repeat;
+  background-position: center right 0.5rem;
+  color: $slate;
+}
