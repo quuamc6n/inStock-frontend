@@ -10,7 +10,7 @@
     align-items: flex-end;
   }
 
-  &__arrow-link {
+  &__link {
     text-decoration: none;
   }
 
@@ -62,5 +62,43 @@
     padding-bottom: 0.2rem;
     padding-left: 0.7rem;
     margin-bottom: 1rem;
+  }
+
+  &__button-container {
+    display: flex;
+    align-items: center;
+
+    @include tablet {
+      justify-content: flex-end;
+    }
+  }
+
+  &__cancel {
+    width: 50%;
+    height: 2.25rem;
+    border: 1px solid grey;
+    background-color: transparent;
+    border-radius: 20px;
+    margin-right: 0.5rem;
+
+    @include tablet {
+      // width: 15%;
+      width: 100px;
+    }
+  }
+
+  &__delete {
+    width: 50%;
+    height: 2.25rem;
+    border: none;
+    background-color: $red;
+    color: $white;
+    border-radius: 20px;
+    margin-left: 0.5rem;
+
+    @include tablet {
+      // width: 15%;
+      width: 100px;
+    }
   }
 }

@@ -48,7 +48,7 @@ const AddWarehouse = () => {
   return (
     <section className="add-warehouse">
       <div className="add-warehouse__container">
-        <Link to="warehouses" className="add-warehouse__arrow-link">
+        <Link to="warehouses" className="add-warehouse__link">
           <img
             src={backArrow}
             className="add-warehouse__arrow"
@@ -181,8 +181,10 @@ const AddWarehouse = () => {
             </label>
 
             <div className="add-warehouse__button-container">
-              <button className="add-warehouse__button">Cancel</button>
-              <button className="add-warehouse__button" type="submit">
+              <Link to="warehouses" className="add-warehouse__link">
+                <button className="add-warehouse__cancel">Cancel</button>
+              </Link>
+              <button className="add-warehouse__delete" type="submit">
                 + Add Warehouse
               </button>
             </div>
