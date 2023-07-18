@@ -9,6 +9,7 @@ import Header from "./components/Header/Header";
 import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
 import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
 import AddItem from "./components/AddItem/AddItem";
+import Edititem from "./components/EditItem/Edititem";
 import EditWarehouse from "./components/EditWarehouse/EditWarehouse";
 
 function App() {
@@ -44,6 +45,9 @@ function App() {
             ></Route>
             <Route path="/inventory/add"
             element={<AddItem />}
+            ></Route>
+            <Route path="/inventory/:inventoryId/edit"
+            element={<Edititem />}
             ></Route>
           </Routes>
         </main>

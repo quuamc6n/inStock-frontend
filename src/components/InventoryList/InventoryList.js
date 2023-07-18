@@ -155,8 +155,8 @@ const InventoryList = (props) => {
                 }
               >
                 <img src={deleteIcon} alt="delete icon" />
-              </Link>
-              <Link to={`./${inventory.id}/edit`} className="inventory__link">
+              </button>
+              <Link to={`/inventory/${inventory.id}/edit`} className="inventory__link">
                 <img src={editIcon} alt="edit icon" />
               </Link>
             </div>
