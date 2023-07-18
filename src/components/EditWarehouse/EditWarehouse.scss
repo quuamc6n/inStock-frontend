@@ -2,22 +2,15 @@
 @use "../../styles/partials/breakpoints" as *;
 @use "../../styles/partials/typography" as *;
 
-.add-item {
-  @include body-small-mobile;
+.edit-warehouse {
   &__container {
     padding: 1.5rem 1rem 1.5rem 1rem;
     display: flex;
     border-bottom: 1px solid $cloud;
-    align-items: flex-start;
-  }
-
-  &__arrow {
-    padding-top: 0.5rem;
   }
 
   &__title {
-    @include page-header-mobile;
-    font-size: 1.74rem;
+    @include page-header-mobile();
     padding-left: 0.3rem;
   }
 
@@ -35,6 +28,10 @@
     border-bottom: 1px solid $cloud;
   }
 
+  &__form-container--contact {
+    padding: 0 1rem 1rem 1rem;
+  }
+
   &__subtitle {
     padding: 1rem 1rem 1.5rem 1rem;
   }
@@ -46,28 +43,11 @@
 
   &__form-title {
     padding-bottom: 0.2rem;
-    font-weight: 600;
-
-    &-status {
-      padding: 0;
-      margin-bottom: 0.25rem;
-    }
   }
 
   &__label {
     display: flex;
     flex-direction: column;
-
-    &-hidden {
-      display: none;
-    }
-
-    &-status {
-      flex-direction: row;
-      align-items: center;
-      margin-top: 0.25rem;
-      margin-bottom: 0.25rem;
-    }
   }
 
   &__form-input {
@@ -77,39 +57,12 @@
     padding-bottom: 0.2rem;
     padding-left: 0.7rem;
     margin-bottom: 1rem;
-    height: 2rem;
-
-    &-category {
-      margin-bottom: 0.25rem;
-    }
-
-    &-status {
-      margin-bottom: 0;
-      margin-right: 0.5rem;
-    }
-
-    &-textArea {
-      height: 7rem;
-      position: relative;
-      &::placeholder {
-        position: absolute;
-        top: 8px;
-        left: 10px;
-      }
-    }
   }
-  &__status {
+  &__button-container{
     display: flex;
     justify-content: space-between;
-    padding-right: 2rem;
-    margin-top: -0.5rem;
   }
-  &__button-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1rem;
-  }
-  &__button-cancel {
+    &__button-cancel {
     color: $instock-black;
     width: 47%;
     border: 1px solid $cloud;
@@ -118,7 +71,7 @@
     height: 2rem;
     cursor: pointer;
   }
-  &__button-add {
+  &__button-submit {
     color: $white;
     border-style: none;
     cursor: pointer;
@@ -127,24 +80,4 @@
     height: 2rem;
     width: 47%;
   }
-}
-
-.addition {
-  width: 100%;
-  height: 36px;
-
-  &__button {
-    color: $white;
-  }
-
-  &__container {
-  }
-}
-
-select {
-  appearance: none;
-  background-image: url("../../assets/images/Icons/arrow_drop_down-24px.svg");
-  background-repeat: no-repeat;
-  background-position: center right 0.5rem;
-  color: $slate;
 }

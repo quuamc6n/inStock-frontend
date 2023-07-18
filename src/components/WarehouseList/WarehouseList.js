@@ -82,7 +82,7 @@ const WarehouseList = (props) => {
                 <button onClick={() => openDeleteModal(warehouse.warehouse_name, warehouse.id)}>
                   <img src={deleteIcon} alt="Delete Icon"></img>
                 </button>
-                <Link>
+                <Link to={`./${warehouse.id}/edit`}>
                   <img src={editIcon} alt="Edit Icon"></img>
                 </Link>
               </div>
