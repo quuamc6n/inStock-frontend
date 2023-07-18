@@ -20,8 +20,7 @@ const AddWarehouse = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(event);
-
+   
     const warehouseData = {
       warehouse_name: name,
       address: address,

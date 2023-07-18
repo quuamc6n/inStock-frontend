@@ -47,6 +47,8 @@
   }
 
   &__form-title {
+    @include body-medium-mobile;
+    font-weight: 600;
     padding-bottom: 0.2rem;
   }
 
@@ -62,6 +64,7 @@
     padding-bottom: 0.2rem;
     padding-left: 0.7rem;
     margin-bottom: 1rem;
+    
   }
 
   &__button-container {
@@ -75,7 +78,7 @@
   }
 
   &__cancel {
-    color: $instock-black;
+    @include labels-mobile;
     width: 100%;
     border: 1px solid $cloud;
     background-color: $white;
@@ -85,6 +88,7 @@
   }
 
   &__delete {
+    @include labels-mobile;
     color: $white;
     border-style: none;
     cursor: pointer;
