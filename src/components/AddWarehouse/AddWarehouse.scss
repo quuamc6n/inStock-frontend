@@ -1,0 +1,124 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/typography" as *;
+
+.add-warehouse {
+  &__container {
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    display: flex;
+    border-bottom: 1px solid $cloud;
+    align-items: flex-end;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__title {
+    @include page-header-mobile();
+    padding-left: 0.3rem;
+  }
+
+  &__form-container {
+    border-bottom: 1px solid $cloud;
+
+    // @include tablet {
+    //   display: flex;
+    // }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__form-sub-container {
+    padding: 0 1rem 1rem 1rem;
+    border-bottom: 1px solid $cloud;
+
+    @include tablet {
+      border-right: 1px solid $cloud;
+      width: 50%;
+    }
+  }
+
+  &__form-container--contact {
+    padding: 0 1rem 1rem 1rem;
+
+    @include tablet {
+      width: 50%;
+    }
+  }
+
+  &__subtitle {
+    padding: 1rem 0 1.5rem 0;
+
+    @include tablet {
+     padding-left: 0;
+     padding-right: 0;
+    }
+  }
+
+  &__subtitle--contact {
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+  }
+
+  &__form-title {
+    @include body-medium-mobile;
+    font-weight: 600;
+    padding-bottom: 0.2rem;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__form-input {
+    border-radius: 20px;
+    border: 1px solid $cloud;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-left: 0.7rem;
+    margin-bottom: 1rem;
+    
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+   
+  }
+
+  &__link-cancel {
+    width: 47%;
+  }
+
+  &__cancel {
+    @include labels-mobile;
+    width: 100%;
+    border: 1px solid $cloud;
+    background-color: $white;
+    border-radius: 20px;
+    height: 2rem;
+    cursor: pointer;
+  }
+
+  &__delete {
+    @include labels-mobile;
+    color: $white;
+    border-style: none;
+    cursor: pointer;
+    background-color: $instock-indigo;
+    border-radius: 20px;
+    height: 2rem;
+    width: 47%;
+  }
+}

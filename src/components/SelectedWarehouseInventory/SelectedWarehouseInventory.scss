@@ -1,0 +1,75 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/typography" as *;
+
+.selected-warehouse {
+  color: $instock-black;
+  background-color: $light-grey;
+
+  &__title {
+    @include page-header-mobile();
+  }
+
+  &__card {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid $cloud;
+
+    &-info {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__div {
+    width: 50%;
+    padding-bottom: 1rem;
+    @include body-medium-mobile;
+
+    &-container {
+      display: flex;
+      align-items: center;
+    }
+
+    &-title {
+      @include body-small-mobile;
+      font-weight: 600;
+      color: $slate;
+      padding-bottom: 0.3rem;
+    }
+
+    &-info--outstock-container {
+      @include body-small-mobile();
+      color: $red;
+      border: 1px;
+      border-radius: 20px;
+      background: rgba(201, 69, 21, 0.07);
+      width: 5rem;
+      padding-top: 0.2rem;
+      padding-bottom: 0.2rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    &-info--instock-container {
+      @include body-small-mobile();
+      color: $green;
+      border: 1px;
+      border-radius: 20px;
+      background: rgba(21, 132, 99, 0.07);
+      width: 3.5rem;
+      padding-top: 0.2rem;
+      padding-bottom: 0.2rem;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}

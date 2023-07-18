@@ -1,0 +1,110 @@
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+
+.inventoryDetails {
+    color: $instock-black;
+    @include body-small-mobile;
+    
+  &__header {
+
+    &-backArrow{
+        margin-right: 0.5rem;
+    }
+
+    &-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $cloud;
+        padding: 1.5rem 1rem 1rem 1rem;
+    }
+
+    &-div {
+        display: flex;
+        justify-content: left;
+        &-link{
+            display: flex;
+            align-items: center
+        }
+    }
+    &-title {
+        @include page-header-mobile;
+    }
+    &-edit {
+
+        &-container{
+
+        }
+
+        &-button{
+            display: flex;
+            color: $white;
+            background-color: $instock-indigo;
+            border: none;
+            border-radius: 20px;
+            height: 36px;
+            width: 36px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+  }
+
+  &__container {
+    padding: 0 1.5rem 1.5rem 1rem;
+
+    &-outstock{
+        @include body-small-mobile();
+        color: $red;
+        border: 1px;
+        border-radius: 20px;
+        background: rgba(201, 69, 21, 0.07);
+        width: 5rem;
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    &-instock {
+        @include body-small-mobile();
+        color: $green;
+        border: 1px;
+        border-radius: 20px;
+        background: rgba(21, 132, 99, 0.07);
+        width: 3.5rem;
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    &-article {
+        margin-top: 1rem;
+
+        &-status{
+            display: flex;
+            justify-content: space-between;
+            width: 75%;
+            margin-top: 1rem;
+        }
+
+        &-div{
+            width: 45%;
+        }
+        &-status-div{
+
+        }
+    }
+    &-title {
+        font-weight: 600;
+        color: $slate;
+    }
+    &-desc {
+        margin-top: 0.25rem;
+    }
+
+    }
+  }
