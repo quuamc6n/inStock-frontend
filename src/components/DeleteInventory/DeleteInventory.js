@@ -4,20 +4,20 @@ import CloseIcon from "../../assets/images/Icons/close-24px.svg";
 import axios from "axios";
 
 const DeleteInventory = ({ isOpen, onClose, inventoryName, inventoryId }) => {
-    const handleDelete = () => {
-      axios
-        .delete(`http://localhost:8080/inventories/${inventoryId}`)
-        .then(() => {
-          onClose();
-          window.location.reload();
-        })
-        .catch((error) => {
-          console.error("Error deleting inventory item:", error);
-        });
-    };
+  const handleDelete = () => {
+    axios
+      .delete(`http://localhost:8080/inventories/${inventoryId}`)
+      .then(() => {
+        onClose();
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.error("Error deleting inventory item:", error);
+      });
+  };
 
-    return (
-        <section className={`inventory-modal ${isOpen ? "inventory-open" : ""}`}>
+  return (
+    <section className={`inventory-modal ${isOpen ? "inventory-open" : ""}`}>
       <div className="delete-inventory">
         <div className="delete-inventory__box">
           <img
@@ -45,8 +45,7 @@ const DeleteInventory = ({ isOpen, onClose, inventoryName, inventoryId }) => {
         </div>
       </div>
     </section>
+  );
+};
 
-    )
-}
-
-export default DeleteInventory
+export default DeleteInventory;

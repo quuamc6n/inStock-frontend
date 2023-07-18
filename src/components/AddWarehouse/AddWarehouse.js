@@ -15,8 +15,8 @@ const AddWarehouse = () => {
   const [email, setEmail] = useState("");
 
   const newWarehouse = async (warehouseData) => {
-    return axios.post("http://localhost:8080/warehouses", warehouseData)
-  }
+    return axios.post("http://localhost:8080/warehouses", warehouseData);
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -30,29 +30,30 @@ const AddWarehouse = () => {
       contact_name: contactName,
       contact_position: positon,
       contact_phone: phone,
-      contact_email: email
-  
+      contact_email: email,
     };
 
-    try{const response = await newWarehouse(warehouseData);
-      if(response.status === 200){
+    try {
+      const response = await newWarehouse(warehouseData);
+      if (response.status === 200) {
         alert("successful");
-      } else{
+      } else {
         alert("failed");
       }
+    } catch (error) {
+      console.error(error);
     }
-    catch(error){console.error(error)}
-  }
+  };
 
   return (
     <section className="add-warehouse">
       <div className="add-warehouse__container">
         <Link to="warehouses" className="add-warehouse__arrow-link">
-        <img
-          src={backArrow}
-          className="add-warehouse__arrow"
-          alt="back arrow"
-        />
+          <img
+            src={backArrow}
+            className="add-warehouse__arrow"
+            alt="back arrow"
+          />
         </Link>
         <h1 className="add-warehouse__title">Add New Warehouse</h1>
       </div>
