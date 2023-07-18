@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
 import "./warehousedetails.scss";
-
 import backArrow from "../../assets/images/Icons/arrow_back-24px.svg";
 import whiteEditIcon from "../../assets/images/Icons/white-edit-24px.svg";
 
@@ -36,17 +34,19 @@ function WarehouseDetails() {
       <div className="warehouse-header">
         <div className="warehouse-header__box">
           <Link to={`/warehouses`} className="warehouse-header__icon">
-            <img src={backArrow}  />
+            <img src={backArrow} />
           </Link>
           <h1 className="warehouse-header__name">{warehouse.warehouse_name}</h1>
         </div>
         <Link to={`/warehouses/:warehouseId/edit`}>
           <button className="warehouse-header__edit-button">
-            <img
-              src={whiteEditIcon}
-              className="warehouse-header__edit-button__icon"
-              alt="Edit button"
-            />
+            <Link to={`./edit`}>
+              <img
+                src={whiteEditIcon}
+                className="warehouse-header__edit-button__icon"
+                alt="Edit button"
+              />
+            </Link>
             <p className="warehouse-header__edit-button__text">Edit</p>
           </button>
         </Link>

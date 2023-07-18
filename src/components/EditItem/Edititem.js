@@ -1,30 +1,93 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 import backArrow from "../../assets/images/Icons/arrow_back-24px.svg";
-import { useState } from 'react';
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 import classNames from "classnames";
-import "./edit-item.scss"
+import "./edit-item.scss";
 
 function Edititem() {
-    const [name, setName] = useState("");
-    const [description, setDescription] = useState("");
-    const [category, setCategory] = useState("");
-    const [status, setStatus] = useState("In Stock");
-    const [quantity, setQuantity] = useState("");
-    const [warehouse, setWarehouse] = useState("");
+  const { inventoryId } = useParams();
+  const [inventory, setInventory] = useState("");
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("");
+  const [status, setStatus] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [warehousename, setWarehouseName] = useState("");
 
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8080/inventories/${inventoryId}`)
+      .then((inventory) => {
+        setInventory(inventory.data[0]);
+        console.log(warehousename);
+        console.log(inventory.data[0]);
+      });
+  }, [inventoryId]);
+
+  useEffect(() => {
+    if (inventory) {
+      setName(inventory.item_name);
+      setDescription(inventory.description);
+      setCategory(inventory.category);
+      setStatus(inventory.status);
+      setQuantity(inventory.quantity);
+      setWarehouseName(inventory.warehouse_name);
+    }
+  }, [inventory]);
+
+  const editItem = async (ItemData) => {
+    return axios.put(
+      `http://localhost:8080/inventories/${inventoryId}`,
+      ItemData
+    );
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const ItemData = {
+      item_name: name,
+      description: description,
+      category: category,
+      status: status,
+      quantity: quantity,
+      warehouse_name: warehousename,
+    };
+
+    try {
+      const response = await editItem(ItemData);
+      if (response.status === 200) {
+        alert("successful");
+      } else {
+        alert("failed");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleCancel = () => {
+    window.location.href = `/warehouses`;
+  };
 
   return (
     <section className="edit-inventory">
       <div className="edit-inventory__container">
         <Link to="/inventory">
-          <img src={backArrow} className="edit-inventory__arrow" alt="back arrow" />
+          <img
+            src={backArrow}
+            className="edit-inventory__arrow"
+            alt="back arrow"
+          />
         </Link>
         <h1 className="edit-inventory__title">Edit Inventory Item</h1>
       </div>
       <section className="edit-inventory__form-container">
         <h2 className="edit-inventory__subtitle">Item Details</h2>
-        <form className="edit-inventory__form">
+        <form className="edit-inventory__form" onSubmit={handleSubmit}>
           <section className="edit-inventory__form-sub-container">
             <label className="edit-inventory__label">
               <span className="edit-inventory__form-title">Item Name</span>
@@ -36,7 +99,6 @@ function Edititem() {
                 type="text"
                 name="name"
                 value={name}
-                placeholder="Item Name"
               />
             </label>
 
@@ -49,8 +111,7 @@ function Edititem() {
                 className="edit-inventory__form-input edit-inventory__form-input-textArea"
                 name="description"
                 value={description}
-                placeholder="Please enter a brief item description..."
-                rows="10"
+                rows="5"
               />
             </label>
 
@@ -77,7 +138,9 @@ function Edititem() {
 
           <div className="edit-inventory__form-sub-container">
             <section className="edit-inventory__form-container--contact">
-              <h2 className="edit-inventory__subtitle--contact">Item Availability</h2>
+              <h2 className="edit-inventory__subtitle--contact">
+                Item Availability
+              </h2>
               <p className="edit-inventory__form-title">Status</p>
               <div className="edit-inventory__status">
                 <label className="edit-inventory__label edit-inventory__label-status">
@@ -91,7 +154,9 @@ function Edititem() {
                     value={status}
                     checked={status === "In Stock"}
                   />
-                  <span className="edit-inventory__form-title-status">In stock</span>
+                  <span className="edit-inventory__form-title-status">
+                    In stock
+                  </span>
                 </label>
                 <label className="edit-inventory__label edit-inventory__label-status">
                   <input
@@ -125,7 +190,6 @@ function Edititem() {
                 type="text"
                 name="quantity"
                 value={quantity}
-                placeholder="0"
               />
             </label>
 
@@ -133,35 +197,35 @@ function Edititem() {
               <span className="edit-inventory__form-title">Warehouse Name</span>
               <select
                 className="edit-inventory__form-input"
-                value={warehouse}
+                value={warehousename}
                 onChange={(event) => {
-                  setWarehouse(event.target.value);
+                  setWarehouseName(event.target.value);
                 }}
               >
-                <option value="" seleceted>
+                <option value="" selected>
                   Please select
                 </option>
-                <option value="1">Manhattan</option>
-                <option value="2">Washington</option>
-                <option value="3">Jersey</option>
-                <option value="4">SF</option>
-                <option value="5">Santa Monica</option>
-                <option value="6">Seattle</option>
-                <option value="7">Miami</option>
-                <option value="8">Boston</option>
+                <option value="Manhattan">Manhattan</option>
+                <option value="Washington">Washington</option>
+                <option value="Jersey">Jersey</option>
+                <option value="SF">SF</option>
+                <option value="Santa Monica">Santa Monica</option>
+                <option value="Seattle">Seattle</option>
+                <option value="Miami">Miami</option>
+                <option value="Boston">Boston</option>
               </select>
             </label>
             <section className="edit-inventory__button-container">
-              <div
-                className="edit-inventory__button-cancel-div"
-              >
-                <button type="button" className="edit-inventory__button-cancel">
+              <div className="edit-inventory__button-cancel-div">
+                <button onClick={() => {
+                  handleCancel();
+                }} type="button" className="edit-inventory__button-cancel">
                   Cancel
                 </button>
               </div>
               <div className="edit-inventory__button-add-div">
                 <button className="edit-inventory__button-add" type="submit">
-                  + Add Item
+                  Save
                 </button>
               </div>
             </section>
@@ -169,7 +233,7 @@ function Edititem() {
         </form>
       </section>
     </section>
-  )
+  );
 }
 
-export default Edititem
+export default Edititem;

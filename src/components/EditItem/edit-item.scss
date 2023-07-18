@@ -45,7 +45,7 @@
   }
 
   &__form-title {
-    margin-bottom: 0.2rem;
+    padding-bottom: 0.2rem;
     font-weight: 600;
 
     &-status{
@@ -89,7 +89,7 @@
     }
 
     &-textArea {
-    //   height: 7rem;
+    padding: 0.6rem;
       position: relative;
       &::placeholder {
         position: absolute;
