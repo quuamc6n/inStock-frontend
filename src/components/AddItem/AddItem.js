@@ -185,21 +185,18 @@ const AddItem = () => {
               </select>
             </label>
             <section className="add-item__button-container">
-              <div
+              <button
                 onClick={() => {
                   handleCancel();
                 }}
-                className="add-item__button-cancel-div"
+                type="button"
+                className="add-item__button-cancel"
               >
-                <button type="button" className="add-item__button-cancel">
-                  Cancel
-                </button>
-              </div>
-              <div className="add-item__button-add-div">
-                <button className="add-item__button-add" type="submit">
-                  + Add Item
-                </button>
-              </div>
+                Cancel
+              </button>
+              <button className="add-item__button-add" type="submit">
+                + Add Item
+              </button>
             </section>
           </div>
         </form>
