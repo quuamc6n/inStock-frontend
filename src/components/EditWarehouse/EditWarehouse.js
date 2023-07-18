@@ -73,7 +73,7 @@ const EditWarehouse = () => {
   return (
     <section className="edit-warehouse">
       <div className="edit-warehouse__container">
-        <Link to={`/warehouses/${warehouseId}`}>
+        <Link to={`/warehouses/${warehouseId}`} className="edit-warehouse__backArrow-link">
           <img
             src={backArrow}
             className="edit-warehouse__arrow"

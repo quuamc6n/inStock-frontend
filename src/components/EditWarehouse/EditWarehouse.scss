@@ -8,6 +8,10 @@
     display: flex;
     border-bottom: 1px solid $cloud;
   }
+  &__backArrow-link{
+    display: flex;
+    align-items: center;
+  }
 
   &__title {
     @include page-header-mobile();
