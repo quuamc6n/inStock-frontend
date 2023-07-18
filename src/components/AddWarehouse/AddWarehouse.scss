@@ -66,39 +66,31 @@
 
   &__button-container {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
 
-    @include tablet {
-      justify-content: flex-end;
-    }
+  &__link-cancel {
+    width: 47%;
   }
 
   &__cancel {
-    width: 50%;
-    height: 2.25rem;
-    border: 1px solid grey;
-    background-color: transparent;
+    color: $instock-black;
+    width: 100%;
+    border: 1px solid $cloud;
+    background-color: $white;
     border-radius: 20px;
-    margin-right: 0.5rem;
-
-    @include tablet {
-      // width: 15%;
-      width: 100px;
-    }
+    height: 2rem;
+    cursor: pointer;
   }
 
   &__delete {
-    width: 50%;
-    height: 2.25rem;
-    border: none;
-    background-color: $red;
     color: $white;
+    border-style: none;
+    cursor: pointer;
+    background-color: $instock-indigo;
     border-radius: 20px;
-    margin-left: 0.5rem;
-
-    @include tablet {
-      // width: 15%;
-      width: 100px;
-    }
+    height: 2rem;
+    width: 47%;
   }
 }
