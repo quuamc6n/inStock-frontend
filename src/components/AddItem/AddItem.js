@@ -75,15 +75,15 @@ const AddItem = () => {
 
             <label className="add-item__label">
               <span className="add-item__form-title">Description</span>
-              <input
+              <textarea
                 onChange={(event) => {
                   setDescription(event.target.value);
                 }}
                 className="add-item__form-input add-item__form-input-textArea"
-                type="textArea"
                 name="description"
                 value={description}
                 placeholder="Please enter a brief item description..."
+                rows="5"
               />
             </label>
 

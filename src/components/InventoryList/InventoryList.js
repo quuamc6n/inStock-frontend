@@ -90,7 +90,7 @@ const InventoryList = (props) => {
               <Link className="inventory__link">
                 <img src={deleteIcon} alt="delete icon" />
               </Link>
-              <Link className="inventory__link">
+              <Link to={`./${inventory.id}/edit`} className="inventory__link">
                 <img src={editIcon} alt="edit icon" />
               </Link>
             </div>
