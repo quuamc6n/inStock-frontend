@@ -130,15 +130,16 @@ const InventoryList = (props) => {
                 <p className="inventory__div-title">CATEGORY</p>
                 <p className="inventory__div-info">{inventory.category}</p>
               </div>
+              
               <div className="inventory__div">
                 <p className="inventory__div-title">QTY</p>
-                <p className="inventory__div-info">{inventory.quantity}</p>
+                <p className="inventory__div-info inventory__div-info--qty">{inventory.quantity}</p>
               </div>
             </div>
             <div className="inventory__card-info">
               <div className="inventory__div inventory__div--ghost">
                 <p className="inventory__div-title"></p>
-                <p className="inventory__div-info"></p>
+                <p className="inventory__div-info--ghost">{inventory.quantity}</p>
               </div>
               <div className="inventory__div">
                 <p className="inventory__div-title">WAREHOUSE</p>

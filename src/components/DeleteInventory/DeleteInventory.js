@@ -24,14 +24,14 @@ const DeleteInventory = ({ isOpen, onClose, inventoryName, inventoryId }) => {
             src={CloseIcon}
             onClick={onClose}
             className="delete-inventory__close"
+            alt="close icon"
           />
           <div className="delete-inventory__content">
             <h2 className="delete-inventory__title">
-              Delete {inventoryName} Inventory?
+              Delete {inventoryName} inventory item?
             </h2>
             <p className="delete-inventory__text">
-              Please confirm that you'd like to delete {inventoryName} from the
-              list of warehouses. You won't be able to undo this action.
+              Please confirm that you'd like to delete {inventoryName} from the inventory list. You won't be able to undo this action.
             </p>
           </div>
         </div>
