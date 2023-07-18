@@ -7,6 +7,11 @@
     padding: 1.5rem 1rem 1.5rem 1rem;
     display: flex;
     border-bottom: 1px solid $cloud;
+    align-items: flex-end;
+  }
+
+  &__link {
+    text-decoration: none;
   }
 
   &__title {
@@ -57,5 +62,35 @@
     padding-bottom: 0.2rem;
     padding-left: 0.7rem;
     margin-bottom: 1rem;
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+
+  &__link-cancel {
+    width: 47%;
+  }
+
+  &__cancel {
+    color: $instock-black;
+    width: 100%;
+    border: 1px solid $cloud;
+    background-color: $white;
+    border-radius: 20px;
+    height: 2rem;
+    cursor: pointer;
+  }
+
+  &__delete {
+    color: $white;
+    border-style: none;
+    cursor: pointer;
+    background-color: $instock-indigo;
+    border-radius: 20px;
+    height: 2rem;
+    width: 47%;
   }
 }
