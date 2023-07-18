@@ -19,7 +19,7 @@ function App() {
         <Header />
         <main className="main-section">
           <Routes>
-            <Route path="/" element={<HomePage />}></Route>
+            <Route path="/" element={<Warehouses />}></Route>
             <Route path="warehouses" element={<Warehouses />}></Route>
             <Route path="warehouses/add" element={<AddWarehouse />}></Route>
             <Route

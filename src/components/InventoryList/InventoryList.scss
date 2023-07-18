@@ -4,10 +4,23 @@
 
 .inventory {
   color: $instock-black;
-  background-color: $light-grey;
+  background-color: $white;
 
   &__container {
     padding: 2rem 1.5rem 1.5rem 1.5rem;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__sub-container {
+    @include tablet {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &__title {
@@ -19,9 +32,27 @@
     justify-content: center;
   }
 
+  &__list-titles {
+    display: none;
+
+    @include tablet {
+      @include table-header-mobile();
+      padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $light-grey;
+    }
+  }
+
   &__card {
     padding: 1rem 1.5rem;
     border-top: 1px solid $cloud;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
 
     &-info {
       display: flex;
@@ -44,6 +75,10 @@
       font-weight: 600;
       color: $slate;
       padding-bottom: 0.3rem;
+
+      @include tablet {
+        display: none;
+      }
     }
 
     &-info--outstock-container {
@@ -87,6 +122,9 @@
     height: 36px;
     display: flex;
     align-items: center;
+
+    @include tablet {
+    }
   }
 
   &__button {
@@ -94,11 +132,28 @@
     color: $white;
   }
 
+  &__button-link {
+    @include tablet {
+    }
+  }
+
   &__button-container {
     border-radius: 20px;
     display: flex;
     justify-content: center;
     background-color: $instock-indigo;
+
+    @include tablet {
+      align-items: center;
+      height: 2rem;
+      margin-left: 1rem;
+      width: 8rem;
+    }
+  }
+
+  &__delete-button {
+    border: none;
+    background-color: $white;
   }
 
   &__search {
@@ -113,6 +168,10 @@
       background-image: url("../../assets/images/Icons/search-24px.svg");
       background-repeat: no-repeat;
       background-position: center right 5%;
+
+      @include tablet {
+        width: 12rem;
+      }
 
       &::placeholder {
         @include labels-mobile();

@@ -23,6 +23,10 @@
     &-div {
         display: flex;
         justify-content: left;
+        &-link{
+            display: flex;
+            align-items: center
+        }
     }
     &-title {
         @include page-header-mobile;

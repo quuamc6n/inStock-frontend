@@ -1,7 +1,8 @@
 import "./AddWarehouse.scss";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import backArrow from "../../assets/images/Icons/arrow_back-24px.svg";
+import { Link } from "react-router-dom";
 
 const AddWarehouse = () => {
   const [name, setName] = useState("");
@@ -14,8 +15,8 @@ const AddWarehouse = () => {
   const [email, setEmail] = useState("");
 
   const newWarehouse = async (warehouseData) => {
-    return axios.post("http://localhost:8080/warehouses", warehouseData)
-  }
+    return axios.post("http://localhost:8080/warehouses", warehouseData);
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -29,28 +30,31 @@ const AddWarehouse = () => {
       contact_name: contactName,
       contact_position: positon,
       contact_phone: phone,
-      contact_email: email
-  
+      contact_email: email,
     };
 
-    try{const response = await newWarehouse(warehouseData);
-      if(response.status === 200){
+    try {
+      const response = await newWarehouse(warehouseData);
+      if (response.status === 200) {
         alert("successful");
-      } else{
+      } else {
         alert("failed");
       }
+    } catch (error) {
+      console.error(error);
     }
-    catch(error){console.error(error)}
-  }
+  };
 
   return (
     <section className="add-warehouse">
       <div className="add-warehouse__container">
-        <img
-          src={backArrow}
-          className="add-warehouse__arrow"
-          alt="back arrow"
-        />
+        <Link to="warehouses" className="add-warehouse__link">
+          <img
+            src={backArrow}
+            className="add-warehouse__arrow"
+            alt="back arrow"
+          />
+        </Link>
         <h1 className="add-warehouse__title">Add New Warehouse</h1>
       </div>
       <section className="add-warehouse__form-container">
@@ -177,8 +181,10 @@ const AddWarehouse = () => {
             </label>
 
             <div className="add-warehouse__button-container">
-              <button className="add-warehouse__button">Cancel</button>
-              <button className="add-warehouse__button" type="submit">
+              <Link to="warehouses" className="add-warehouse__link-cancel">
+                <button className="add-warehouse__cancel">Cancel</button>
+              </Link>
+              <button className="add-warehouse__delete" type="submit">
                 + Add Warehouse
               </button>
             </div>

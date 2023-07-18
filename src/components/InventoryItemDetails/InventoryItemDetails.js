@@ -4,7 +4,7 @@ import axios from "axios";
 import whiteEditIcon from "../../assets/images/Icons/white-edit-24px.svg";
 import backArrow from "../../assets/images/Icons/arrow_back-24px.svg";
 import classNames from "classnames";
-
+import { Link } from "react-router-dom";
 import "./InventoryItemDetails.scss";
 
 const InventoryItemDetails = () => {
@@ -35,27 +35,29 @@ const InventoryItemDetails = () => {
   return (
     <section className="inventoryDetails">
       <header className="inventoryDetails__header">
-        {/* Will need a background left arrow image */}
         <div className="inventoryDetails__header-container">
           <div className="inventoryDetails__header-div">
-            <img
-              src={backArrow}
-              alt="Back Arrow Icon"
-              className="inventoryDetails__header-backArrow"
-            ></img>
+            <Link to={`/inventory`} className="inventoryDetails__header-div-link">
+              <img
+                src={backArrow}
+                alt="Back Arrow Icon"
+                className="inventoryDetails__header-backArrow"
+              ></img>
+            </Link>
             <h1 className="inventoryDetails__header-title">{inv.item_name}</h1>
           </div>
           <div className="inventoryDetails__header-edit-container">
-            <button className="inventoryDetails__header-edit-button">
-              <img
-                className="inventoryDetails__header-edit"
-                src={whiteEditIcon}
-                alt="White Edit Icon"
-              ></img>
-            </button>
+            <Link to={`./edit`}>
+              <button className="inventoryDetails__header-edit-button">
+                <img
+                  className="inventoryDetails__header-edit"
+                  src={whiteEditIcon}
+                  alt="White Edit Icon"
+                ></img>
+              </button>
+            </Link>
           </div>
         </div>
-        {/* May also need to make edit a background image. Check Zach's code */}
         <div className="inventoryDetails__container">
           <article className="inventoryDetails__container-article">
             <p className="inventoryDetails__container-title">
