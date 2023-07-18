@@ -21,24 +21,47 @@
 
   &__form-container {
     border-bottom: 1px solid $cloud;
+
+    // @include tablet {
+    //   display: flex;
+    // }
   }
 
   &__form {
     display: flex;
     flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__form-sub-container {
     padding: 0 1rem 1rem 1rem;
     border-bottom: 1px solid $cloud;
+
+    @include tablet {
+      border-right: 1px solid $cloud;
+      width: 50%;
+    }
   }
 
   &__form-container--contact {
     padding: 0 1rem 1rem 1rem;
+
+    @include tablet {
+      width: 50%;
+    }
   }
 
   &__subtitle {
-    padding: 1rem 1rem 1.5rem 1rem;
+    padding: 1rem 0 1.5rem 0;
+
+    @include tablet {
+     padding-left: 0;
+     padding-right: 0;
+    }
   }
 
   &__subtitle--contact {
@@ -71,6 +94,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
+   
   }
 
   &__link-cancel {

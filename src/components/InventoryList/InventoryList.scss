@@ -23,6 +23,24 @@
     }
   }
 
+  &__div--ghost {
+   
+  }
+
+  &__div-info--qty {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__div-info--ghost {
+    display: none;
+
+    @include tablet {
+      display: inline-block;
+    }
+  }
+
   &__title {
     @include page-header-mobile();
   }
@@ -65,6 +83,10 @@
     padding-bottom: 1rem;
     @include body-medium-mobile;
 
+    @include tablet {
+      width: 5.5rem;
+    }
+
     &-container {
       display: flex;
       align-items: center;
@@ -79,6 +101,12 @@
       @include tablet {
         display: none;
       }
+
+      &-info {
+        @include tablet {
+          padding-bottom: 0;
+        }
+      }
     }
 
     &-info--outstock-container {
@@ -92,6 +120,11 @@
       padding-bottom: 0.2rem;
       font-weight: 600;
       text-align: center;
+
+      @include tablet {
+        padding-bottom: 0;
+       
+      }
     }
 
     &-info--instock-container {
@@ -105,6 +138,11 @@
       padding-bottom: 0.2rem;
       font-weight: 600;
       text-align: center;
+
+      @include tablet {
+        padding-bottom: 0;
+        
+      }
     }
   }
 

@@ -55,11 +55,15 @@ const AddWarehouse = () => {
           />
         </Link>
         <h1 className="add-warehouse__title">Add New Warehouse</h1>
+        
       </div>
+      
       <section className="add-warehouse__form-container">
-        <h2 className="add-warehouse__subtitle">Warehouse Details</h2>
+      
         <form className="add-warehouse__form" onSubmit={handleSubmit}>
+        
           <section className="add-warehouse__form-sub-container">
+          <h2 className="add-warehouse__subtitle">Warehouse Details</h2>
             <label className="add-warehouse__label">
               <span className="add-warehouse__form-title">Warehouse Name</span>
               <input
