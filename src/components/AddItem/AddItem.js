@@ -1,17 +1,18 @@
 import "./AddItem.scss";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import backArrow from "../../assets/images/Icons/arrow_back-24px.svg";
 import classNames from "classnames";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const AddItem = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [status, setStatus] = useState("In Stock");
-  const [quantity, setQuantity] = useState("");
+  const [quantity, setQuantity] = useState(0);
   const [warehouse, setWarehouse] = useState("");
+  const navigate = useNavigate();
 
   const newItem = async (itemData) => {
     return axios.post("http://localhost:8080/inventories", itemData);
@@ -23,7 +24,6 @@ const AddItem = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    window.location.href = "/inventory";
 
     const itemData = {
       item_name: name,
@@ -39,6 +39,7 @@ const AddItem = () => {
       const response = await newItem(itemData);
       if (response.status === 200) {
         alert("successful");
+        navigate(`/inventory`)
       } else {
         alert("failed");
       }
