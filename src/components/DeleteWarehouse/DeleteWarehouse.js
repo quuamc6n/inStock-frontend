@@ -22,6 +22,7 @@ const DeleteWarehouse = ({ isOpen, onClose, warehouseName, warehouseId }) => {
         <div className="delete-modal__box">
           <img
             src={CloseIcon}
+            alt=""
             onClick={onClose}
             className="delete-modal__close"
           />

@@ -22,8 +22,6 @@ function Edititem() {
       .get(`http://localhost:8080/inventories/${inventoryId}`)
       .then((inventory) => {
         setInventory(inventory.data[0]);
-        console.log(warehousename);
-        console.log(inventory.data[0]);
       });
   }, [inventoryId]);
 
