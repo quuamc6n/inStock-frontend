@@ -6,9 +6,11 @@ function Inventory() {
   const [inventories, setInventory] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/inventories`).then((inventoryList) => {
-      setInventory(inventoryList.data);
-    });
+    axios
+      .get(`https://instockbackend.onrender.com/inventories`)
+      .then((inventoryList) => {
+        setInventory(inventoryList.data);
+      });
   }, []);
 
   return (

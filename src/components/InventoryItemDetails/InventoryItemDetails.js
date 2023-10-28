@@ -15,7 +15,7 @@ const InventoryItemDetails = () => {
     const fetchInventory = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/inventories/${inventoryId}`
+          `https://instockbackend.onrender.com/inventories/${inventoryId}`
         );
         setInventory(response.data);
       } catch (error) {

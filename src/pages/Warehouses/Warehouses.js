@@ -6,9 +6,11 @@ const Warehouses = () => {
   const [warehouses, setWarehouses] = useState([]);
   // Need early return or async -> await
   useEffect(() => {
-    axios.get(`http://localhost:8080/warehouses`).then((warehouseList) => {
-      setWarehouses(warehouseList.data);
-    });
+    axios
+      .get(`https://instockbackend.onrender.com/warehouses`)
+      .then((warehouseList) => {
+        setWarehouses(warehouseList.data);
+      });
   }, []);
 
   return (

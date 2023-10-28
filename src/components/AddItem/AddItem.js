@@ -15,7 +15,10 @@ const AddItem = () => {
   const navigate = useNavigate();
 
   const newItem = async (itemData) => {
-    return axios.post("http://localhost:8080/inventories", itemData);
+    return axios.post(
+      "https://instockbackend.onrender.com/inventories",
+      itemData
+    );
   };
 
     const handleCancel = () => {

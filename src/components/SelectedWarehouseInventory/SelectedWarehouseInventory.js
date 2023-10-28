@@ -16,7 +16,7 @@ const SelectedWarehouseInventory = () => {
     const fetchWarehouseInventory = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/warehouses/${warehouseId}/inventories`
+          `https://instockbackend.onrender.com/warehouses/${warehouseId}/inventories`
         );
         setWarehouseInventory(response.data);
       } catch (error) {

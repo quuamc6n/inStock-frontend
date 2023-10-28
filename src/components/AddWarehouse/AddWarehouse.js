@@ -15,7 +15,10 @@ const AddWarehouse = () => {
   const [email, setEmail] = useState("");
 
   const newWarehouse = async (warehouseData) => {
-    return axios.post("http://localhost:8080/warehouses", warehouseData);
+    return axios.post(
+      "https://instockbackend.onrender.com/warehouses",
+      warehouseData
+    );
   };
 
   const handleSubmit = async (event) => {

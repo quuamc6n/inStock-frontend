@@ -19,7 +19,7 @@ function Edititem() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/inventories/${inventoryId}`)
+      .get(`https://instockbackend.onrender.com/inventories/${inventoryId}`)
       .then((inventory) => {
         setInventory(inventory.data[0]);
       });
@@ -38,7 +38,7 @@ function Edititem() {
 
   const editItem = async (ItemData) => {
     return axios.put(
-      `http://localhost:8080/inventories/${inventoryId}`,
+      `https://instockbackend.onrender.com/inventories/${inventoryId}`,
       ItemData
     );
   };

@@ -6,7 +6,7 @@ import axios from "axios";
 const DeleteWarehouse = ({ isOpen, onClose, warehouseName, warehouseId }) => {
   const handleDelete = () => {
     axios
-      .delete(`http://localhost:8080/warehouses/${warehouseId}`)
+      .delete(`https://instockbackend.onrender.com/warehouses/${warehouseId}`)
       .then(() => {
         onClose();
         window.location.reload();

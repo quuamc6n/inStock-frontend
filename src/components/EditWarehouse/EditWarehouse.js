@@ -18,9 +18,11 @@ const EditWarehouse = () => {
     const [email, setEmail] = useState("");
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/warehouses/${warehouseId}`).then((warehouse) => {
+        axios
+          .get(`https://instockbackend.onrender.com/warehouses/${warehouseId}`)
+          .then((warehouse) => {
             setWarehouse(warehouse.data);
-        });
+          });
     }, [warehouseId]);
 
     useEffect(() => {
@@ -37,7 +39,10 @@ const EditWarehouse = () => {
     }, [warehouse]);
 
   const editWarehouse = async (warehouseData) => {
-    return axios.put(`http://localhost:8080/warehouses/${warehouseId}`, warehouseData);
+    return axios.put(
+      `https://instockbackend.onrender.com/warehouses/${warehouseId}`,
+      warehouseData
+    );
   };
 
   const handleSubmit = async (event) => {

@@ -14,7 +14,7 @@ function WarehouseDetails() {
     const fetchWarehouse = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/warehouses/${warehouseId}`
+          `https://instockbackend.onrender.com/warehouses/${warehouseId}`
         );
         setWarehouse(response.data);
       } catch (error) {
@@ -26,7 +26,7 @@ function WarehouseDetails() {
   }, [warehouseId]);
 
   if (!warehouse) {
-    return <div>Loading...</div>;
+    return <div>Loading... Please be patient, I use a free hosting service!</div>;
   }
 
   return (
