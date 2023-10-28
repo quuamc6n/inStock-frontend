@@ -34,7 +34,7 @@ function WarehouseDetails() {
       <div className="warehouse-header">
         <div className="warehouse-header__box">
           <Link to={`/warehouses`} className="warehouse-header__icon">
-            <img src={backArrow} />
+            <img src={backArrow} alt="BackArrowimage"/>
           </Link>
           <h1 className="warehouse-header__name">{warehouse.warehouse_name}</h1>
         </div>
