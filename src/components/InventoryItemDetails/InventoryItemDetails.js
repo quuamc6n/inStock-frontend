@@ -15,7 +15,12 @@ const InventoryItemDetails = () => {
     const fetchInventory = async () => {
       try {
         const response = await axios.get(
-          `https://e5cd-108-173-235-62.ngrok-free.app/inventories/${inventoryId}`
+          `https://e5cd-108-173-235-62.ngrok-free.app/inventories`,
+          {
+            headers: {
+              "ngrok-skip-browser-warning": "true",
+            },
+          }
         );
         setInventory(response.data);
       } catch (error) {
@@ -37,7 +42,10 @@ const InventoryItemDetails = () => {
       <header className="inventoryDetails__header">
         <div className="inventoryDetails__header-container">
           <div className="inventoryDetails__header-div">
-            <Link to={`/inventory`} className="inventoryDetails__header-div-link">
+            <Link
+              to={`/inventory`}
+              className="inventoryDetails__header-div-link"
+            >
               <img
                 src={backArrow}
                 alt="Back Arrow Icon"

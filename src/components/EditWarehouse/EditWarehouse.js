@@ -6,39 +6,41 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const EditWarehouse = () => {
-    const { warehouseId } = useParams();
-    const [warehouse, setWarehouse] = useState("")
-    const [name, setName] = useState("");
-    const [address, setAddress] = useState("");
-    const [city, setCity] = useState("");
-    const [country, setCountry] = useState("");
-    const [contactName, setContactName] = useState("");
-    const [position, setPosition] = useState("");
-    const [phone, setPhone] = useState("");
-    const [email, setEmail] = useState("");
+  const { warehouseId } = useParams();
+  const [warehouse, setWarehouse] = useState("");
+  const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [country, setCountry] = useState("");
+  const [contactName, setContactName] = useState("");
+  const [position, setPosition] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
 
-    useEffect(() => {
-        axios
-          .get(
-            `https://e5cd-108-173-235-62.ngrok-free.app/warehouses/${warehouseId}`
-          )
-          .then((warehouse) => {
-            setWarehouse(warehouse.data);
-          });
-    }, [warehouseId]);
+  useEffect(() => {
+    axios
+      .get(`https://e5cd-108-173-235-62.ngrok-free.app/inventories`, {
+        headers: {
+          "ngrok-skip-browser-warning": "true",
+        },
+      })
+      .then((warehouse) => {
+        setWarehouse(warehouse.data);
+      });
+  }, [warehouseId]);
 
-    useEffect(() => {
-        if (warehouse) {
-            setName(warehouse.warehouse_name);
-            setAddress(warehouse.address);
-            setCity(warehouse.city);
-            setCountry(warehouse.country);
-            setContactName(warehouse.contact_name);
-            setPosition(warehouse.contact_position);
-            setPhone(warehouse.contact_phone);
-            setEmail(warehouse.contact_email);
-        }
-    }, [warehouse]);
+  useEffect(() => {
+    if (warehouse) {
+      setName(warehouse.warehouse_name);
+      setAddress(warehouse.address);
+      setCity(warehouse.city);
+      setCountry(warehouse.country);
+      setContactName(warehouse.contact_name);
+      setPosition(warehouse.contact_position);
+      setPhone(warehouse.contact_phone);
+      setEmail(warehouse.contact_email);
+    }
+  }, [warehouse]);
 
   const editWarehouse = async (warehouseData) => {
     return axios.put(
@@ -73,14 +75,17 @@ const EditWarehouse = () => {
     }
   };
 
-    const handleCancel = () => {
+  const handleCancel = () => {
     window.location.href = `/warehouses`;
-    };
+  };
 
   return (
     <section className="edit-warehouse">
       <div className="edit-warehouse__container">
-        <Link to={`/warehouses/${warehouseId}`} className="edit-warehouse__backArrow-link">
+        <Link
+          to={`/warehouses/${warehouseId}`}
+          className="edit-warehouse__backArrow-link"
+        >
           <img
             src={backArrow}
             className="edit-warehouse__arrow"

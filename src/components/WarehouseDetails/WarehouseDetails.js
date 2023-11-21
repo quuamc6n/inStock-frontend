@@ -14,7 +14,12 @@ function WarehouseDetails() {
     const fetchWarehouse = async () => {
       try {
         const response = await axios.get(
-          `https://e5cd-108-173-235-62.ngrok-free.app/warehouses/${warehouseId}`
+          `https://e5cd-108-173-235-62.ngrok-free.app/inventories`,
+          {
+            headers: {
+              "ngrok-skip-browser-warning": "true",
+            },
+          }
         );
         setWarehouse(response.data);
       } catch (error) {
@@ -26,7 +31,9 @@ function WarehouseDetails() {
   }, [warehouseId]);
 
   if (!warehouse) {
-    return <div>Loading... Please be patient, I use a free hosting service!</div>;
+    return (
+      <div>Loading... Please be patient, I use a free hosting service!</div>
+    );
   }
 
   return (
@@ -34,7 +41,7 @@ function WarehouseDetails() {
       <div className="warehouse-header">
         <div className="warehouse-header__box">
           <Link to={`/warehouses`} className="warehouse-header__icon">
-            <img src={backArrow} alt="BackArrowimage"/>
+            <img src={backArrow} alt="BackArrowimage" />
           </Link>
           <h1 className="warehouse-header__name">{warehouse.warehouse_name}</h1>
         </div>

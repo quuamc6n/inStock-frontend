@@ -7,7 +7,11 @@ function Inventory() {
 
   useEffect(() => {
     axios
-      .get(`https://e5cd-108-173-235-62.ngrok-free.app/inventories`)
+      .get(`https://e5cd-108-173-235-62.ngrok-free.app/inventories`, {
+        headers: {
+          "ngrok-skip-browser-warning": "true",
+        },
+      })
       .then((inventoryList) => {
         setInventory(inventoryList.data);
       });

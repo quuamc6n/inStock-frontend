@@ -22,6 +22,8 @@ const WarehouseList = (props) => {
     setSelectedWarehouseId(null);
     setDeleteModalOpen(false);
   };
+  console.log("here")
+  console.log(props)
 
   return (
     <main className="main">

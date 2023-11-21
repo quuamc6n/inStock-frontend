@@ -16,7 +16,12 @@ const SelectedWarehouseInventory = () => {
     const fetchWarehouseInventory = async () => {
       try {
         const response = await axios.get(
-          `https://e5cd-108-173-235-62.ngrok-free.app/warehouses/${warehouseId}/inventories`
+          `https://e5cd-108-173-235-62.ngrok-free.app/inventories`,
+          {
+            headers: {
+              "ngrok-skip-browser-warning": "true",
+            },
+          }
         );
         setWarehouseInventory(response.data);
       } catch (error) {
@@ -39,7 +44,8 @@ const SelectedWarehouseInventory = () => {
             <div className="selected-warehouse__card-info">
               <div className="selected-warehouse__div">
                 <p className="selected-warehouse__div-title">INVENTORY ITEM</p>
-                <Link className="selected-warehouse__link"
+                <Link
+                  className="selected-warehouse__link"
                   key={warehouseInventory.id}
                   to={`/inventory/${warehouseInventory.id}`}
                 >
@@ -64,7 +70,6 @@ const SelectedWarehouseInventory = () => {
                     }
                   )}
                 >
-                 
                   <p className="selected-warehouse__div-info selected-warehouse__div-info--outstock">
                     {warehouseInventory.status.toUpperCase()}
                   </p>
