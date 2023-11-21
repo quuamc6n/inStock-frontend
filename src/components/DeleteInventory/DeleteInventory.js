@@ -7,7 +7,10 @@ const DeleteInventory = ({ isOpen, onClose, inventoryName, inventoryId }) => {
   const handleDelete = () => {
     axios
       .delete(
-        `https://e5cd-108-173-235-62.ngrok-free.app/inventories/${inventoryId}`
+        `https://e5cd-108-173-235-62.ngrok-free.app/inventories/${inventoryId}`,
+        {
+          headers: { "ngrok-skip-browser-warning": "true" },
+        }
       )
       .then(() => {
         onClose();
@@ -33,7 +36,8 @@ const DeleteInventory = ({ isOpen, onClose, inventoryName, inventoryId }) => {
               Delete {inventoryName} inventory item?
             </h2>
             <p className="delete-inventory__text">
-              Please confirm that you'd like to delete {inventoryName} from the inventory list. You won't be able to undo this action.
+              Please confirm that you'd like to delete {inventoryName} from the
+              inventory list. You won't be able to undo this action.
             </p>
           </div>
         </div>

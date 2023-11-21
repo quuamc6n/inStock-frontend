@@ -45,7 +45,10 @@ const EditWarehouse = () => {
   const editWarehouse = async (warehouseData) => {
     return axios.put(
       `https://e5cd-108-173-235-62.ngrok-free.app/warehouses/${warehouseId}`,
-      warehouseData
+      warehouseData,
+      {
+        headers: { "ngrok-skip-browser-warning": "true" },
+      }
     );
   };
 

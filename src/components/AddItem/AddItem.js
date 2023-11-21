@@ -17,13 +17,18 @@ const AddItem = () => {
   const newItem = async (itemData) => {
     return axios.post(
       "https://e5cd-108-173-235-62.ngrok-free.app/inventories",
-      itemData
+      itemData,
+      {
+        headers: {
+          "ngrok-skip-browser-warning": "true",
+        },
+      }
     );
   };
 
-    const handleCancel = () => {
+  const handleCancel = () => {
     window.location.href = "/inventory";
-    };
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -38,11 +43,11 @@ const AddItem = () => {
     };
 
     try {
-        console.log(itemData)
+      console.log(itemData);
       const response = await newItem(itemData);
       if (response.status === 200) {
         alert("successful");
-        navigate(`/inventory`)
+        navigate(`/inventory`);
       } else {
         alert("failed");
       }

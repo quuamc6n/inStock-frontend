@@ -43,7 +43,10 @@ function Edititem() {
   const editItem = async (ItemData) => {
     return axios.put(
       `https://instockbackend.onrender.com/inventories/${inventoryId}`,
-      ItemData
+      ItemData,
+      {
+        headers: { "ngrok-skip-browser-warning": "true" },
+      }
     );
   };
 
