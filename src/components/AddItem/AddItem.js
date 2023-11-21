@@ -16,7 +16,7 @@ const AddItem = () => {
 
   const newItem = async (itemData) => {
     return axios.post(
-      "https://instockbackend.onrender.com/inventories",
+      "https://e5cd-108-173-235-62.ngrok-free.app/inventories",
       itemData
     );
   };

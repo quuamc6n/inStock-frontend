@@ -6,7 +6,9 @@ import axios from "axios";
 const DeleteInventory = ({ isOpen, onClose, inventoryName, inventoryId }) => {
   const handleDelete = () => {
     axios
-      .delete(`https://instockbackend.onrender.com/inventories/${inventoryId}`)
+      .delete(
+        `https://e5cd-108-173-235-62.ngrok-free.app/inventories/${inventoryId}`
+      )
       .then(() => {
         onClose();
         window.location.reload();

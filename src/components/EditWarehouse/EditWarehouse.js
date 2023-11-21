@@ -19,7 +19,9 @@ const EditWarehouse = () => {
 
     useEffect(() => {
         axios
-          .get(`https://instockbackend.onrender.com/warehouses/${warehouseId}`)
+          .get(
+            `https://e5cd-108-173-235-62.ngrok-free.app/warehouses/${warehouseId}`
+          )
           .then((warehouse) => {
             setWarehouse(warehouse.data);
           });
@@ -40,7 +42,7 @@ const EditWarehouse = () => {
 
   const editWarehouse = async (warehouseData) => {
     return axios.put(
-      `https://instockbackend.onrender.com/warehouses/${warehouseId}`,
+      `https://e5cd-108-173-235-62.ngrok-free.app/warehouses/${warehouseId}`,
       warehouseData
     );
   };

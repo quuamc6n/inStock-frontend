@@ -19,7 +19,9 @@ function Edititem() {
 
   useEffect(() => {
     axios
-      .get(`https://instockbackend.onrender.com/inventories/${inventoryId}`)
+      .get(
+        `https://e5cd-108-173-235-62.ngrok-free.app/inventories/${inventoryId}`
+      )
       .then((inventory) => {
         setInventory(inventory.data[0]);
       });
