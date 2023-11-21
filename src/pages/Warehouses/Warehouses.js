@@ -7,7 +7,7 @@ const Warehouses = () => {
   // Need early return or async -> await
   useEffect(() => {
     axios
-      .get(`https://instockbackend.onrender.com/warehouses`)
+      .get(`https://e5cd-108-173-235-62.ngrok-free.app/warehouses`)
       .then((warehouseList) => {
         setWarehouses(warehouseList.data);
       });

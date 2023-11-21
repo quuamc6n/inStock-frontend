@@ -7,7 +7,7 @@ function Inventory() {
 
   useEffect(() => {
     axios
-      .get(`https://instockbackend.onrender.com/inventories`)
+      .get(`https://e5cd-108-173-235-62.ngrok-free.app/inventories`)
       .then((inventoryList) => {
         setInventory(inventoryList.data);
       });
