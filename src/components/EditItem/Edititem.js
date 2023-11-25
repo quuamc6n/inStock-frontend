@@ -42,7 +42,7 @@ function Edititem() {
 
   const editItem = async (ItemData) => {
     return axios.put(
-      `https://instockbackend.onrender.com/inventories/${inventoryId}`,
+      `https://d889-108-173-235-62.ngrok-free.app/inventories/${inventoryId}`,
       ItemData,
       {
         headers: { "ngrok-skip-browser-warning": "true" },

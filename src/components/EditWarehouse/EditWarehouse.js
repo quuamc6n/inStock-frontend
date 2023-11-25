@@ -19,7 +19,7 @@ const EditWarehouse = () => {
 
   useEffect(() => {
     axios
-      .get(`https://e5cd-108-173-235-62.ngrok-free.app/inventories`, {
+      .get(`https://d889-108-173-235-62.ngrok-free.app/inventories`, {
         headers: {
           "ngrok-skip-browser-warning": "true",
         },
@@ -44,7 +44,7 @@ const EditWarehouse = () => {
 
   const editWarehouse = async (warehouseData) => {
     return axios.put(
-      `https://e5cd-108-173-235-62.ngrok-free.app/warehouses/${warehouseId}`,
+      `https://d889-108-173-235-62.ngrok-free.app/warehouses/${warehouseId}`,
       warehouseData,
       {
         headers: { "ngrok-skip-browser-warning": "true" },

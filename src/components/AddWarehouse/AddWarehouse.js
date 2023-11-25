@@ -16,7 +16,7 @@ const AddWarehouse = () => {
 
   const newWarehouse = async (warehouseData) => {
     return axios.post(
-      "https://e5cd-108-173-235-62.ngrok-free.app/warehouses",
+      "https://d889-108-173-235-62.ngrok-free.app/warehouses",
       warehouseData,
       {
         headers: { "ngrok-skip-browser-warning": "true" },
