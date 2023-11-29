@@ -7,7 +7,7 @@ const Warehouses = () => {
   // Need early return or async -> await
   useEffect(() => {
     axios
-      .get(`https://d889-108-173-235-62.ngrok-free.app/warehouses`, {
+      .get(`https://184f-108-173-235-62.ngrok-free.app/warehouses`, {
         headers: {
           "ngrok-skip-browser-warning": "true",
         },

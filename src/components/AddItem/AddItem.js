@@ -16,7 +16,7 @@ const AddItem = () => {
 
   const newItem = async (itemData) => {
     return axios.post(
-      "https://d889-108-173-235-62.ngrok-free.app/inventories",
+      "https://184f-108-173-235-62.ngrok-free.app/inventories",
       itemData,
       {
         headers: {

@@ -19,7 +19,7 @@ function Edititem() {
 
   useEffect(() => {
     axios
-      .get(`https://e5cd-108-173-235-62.ngrok-free.app/inventories`, {
+      .get(`https://184f-108-173-235-62.ngrok-free.app/inventories`, {
         headers: {
           "ngrok-skip-browser-warning": "true",
         },
@@ -42,7 +42,7 @@ function Edititem() {
 
   const editItem = async (ItemData) => {
     return axios.put(
-      `https://d889-108-173-235-62.ngrok-free.app/inventories/${inventoryId}`,
+      `https://184f-108-173-235-62.ngrok-free.app/inventories/${inventoryId}`,
       ItemData,
       {
         headers: { "ngrok-skip-browser-warning": "true" },

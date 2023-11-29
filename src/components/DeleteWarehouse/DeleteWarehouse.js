@@ -7,7 +7,7 @@ const DeleteWarehouse = ({ isOpen, onClose, warehouseName, warehouseId }) => {
   const handleDelete = () => {
     axios
       .delete(
-        `https://d889-108-173-235-62.ngrok-free.app/warehouses/${warehouseId}`,
+        `https://184f-108-173-235-62.ngrok-free.app/warehouses/${warehouseId}`,
         {
           headers: { "ngrok-skip-browser-warning": "true" },
         }

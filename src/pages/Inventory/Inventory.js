@@ -7,7 +7,7 @@ function Inventory() {
 
   useEffect(() => {
     axios
-      .get(`https://d889-108-173-235-62.ngrok-free.app/inventories`, {
+      .get(`https://184f-108-173-235-62.ngrok-free.app/inventories`, {
         headers: {
           "ngrok-skip-browser-warning": "true",
         },

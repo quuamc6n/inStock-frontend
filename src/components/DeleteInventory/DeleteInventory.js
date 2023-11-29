@@ -7,7 +7,7 @@ const DeleteInventory = ({ isOpen, onClose, inventoryName, inventoryId }) => {
   const handleDelete = () => {
     axios
       .delete(
-        `https://d889-108-173-235-62.ngrok-free.app/inventories/${inventoryId}`,
+        `https://184f-108-173-235-62.ngrok-free.app/inventories/${inventoryId}`,
         {
           headers: { "ngrok-skip-browser-warning": "true" },
         }
