@@ -43,7 +43,7 @@ const AddWarehouse = () => {
       const response = await newWarehouse(warehouseData);
       if (response.status === 200) {
         alert("successful");
-        navigate("./warehouses")
+        navigate("/warehouses")
       } else {
         alert("failed");
       }
