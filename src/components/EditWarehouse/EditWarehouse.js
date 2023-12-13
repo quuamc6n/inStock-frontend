@@ -71,7 +71,7 @@ const EditWarehouse = () => {
       const response = await editWarehouse(warehouseData);
       if (response.status === 200) {
         alert("successful");
-        navigate(`./warehouses/${warehouseId}`)
+        navigate(`/warehouses/${warehouseId}`)
       } else {
         alert("failed");
       }
