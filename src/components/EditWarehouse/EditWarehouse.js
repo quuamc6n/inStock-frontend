@@ -2,7 +2,7 @@ import "./EditWarehouse.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import backArrow from "../../assets/images/Icons/arrow_back-24px.svg";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const EditWarehouse = () => {
@@ -16,6 +16,7 @@ const EditWarehouse = () => {
   const [position, setPosition] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -70,6 +71,7 @@ const EditWarehouse = () => {
       const response = await editWarehouse(warehouseData);
       if (response.status === 200) {
         alert("successful");
+        navigate(`./warehouses/${warehouseId}`)
       } else {
         alert("failed");
       }
