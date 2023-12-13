@@ -192,6 +192,9 @@
   &__delete-button {
     border: none;
     background-color: $white;
+    :hover{
+      cursor: pointer;
+    }
   }
 
   &__search {
