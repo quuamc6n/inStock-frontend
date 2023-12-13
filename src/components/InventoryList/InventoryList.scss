@@ -192,6 +192,7 @@
   &__delete-button {
     border: none;
     background-color: $white;
+    margin-right: 0.5rem;
     :hover{
       cursor: pointer;
     }
