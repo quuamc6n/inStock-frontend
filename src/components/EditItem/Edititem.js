@@ -19,7 +19,7 @@ function Edititem() {
 
   useEffect(() => {
     axios
-      .get(`https://184f-108-173-235-62.ngrok-free.app/inventories`, {
+      .get(`https://184f-108-173-235-62.ngrok-free.app/inventories/${inventoryId}`, {
         headers: {
           "ngrok-skip-browser-warning": "true",
         },
