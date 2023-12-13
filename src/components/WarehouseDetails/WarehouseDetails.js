@@ -14,7 +14,7 @@ function WarehouseDetails() {
     const fetchWarehouse = async () => {
       try {
         const response = await axios.get(
-          `https://184f-108-173-235-62.ngrok-free.app/inventories`,
+          `https://184f-108-173-235-62.ngrok-free.app/warehouses/${warehouseId}`,
           {
             headers: {
               "ngrok-skip-browser-warning": "true",
