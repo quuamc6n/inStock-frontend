@@ -45,15 +45,13 @@ function WarehouseDetails() {
           </Link>
           <h1 className="warehouse-header__name">{warehouse.warehouse_name}</h1>
         </div>
-        <Link to={`/warehouses/:warehouseId/edit`}>
+        <Link to={`/warehouses/${warehouseId}/edit`}>
           <button className="warehouse-header__edit-button">
-            <Link to={`./edit`}>
               <img
                 src={whiteEditIcon}
                 className="warehouse-header__edit-button__icon"
                 alt="Edit button"
               />
-            </Link>
             <p className="warehouse-header__edit-button__text">Edit</p>
           </button>
         </Link>

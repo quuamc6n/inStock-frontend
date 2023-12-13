@@ -81,7 +81,7 @@ const EditWarehouse = () => {
   };
 
   const handleCancel = () => {
-    window.location.href = `/warehouses`;
+    navigate("/");
   };
 
   return (

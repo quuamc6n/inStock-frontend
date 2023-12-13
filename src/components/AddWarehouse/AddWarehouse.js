@@ -189,7 +189,7 @@ const AddWarehouse = () => {
             </label>
 
             <div className="add-warehouse__button-container">
-              <Link to="warehouses" className="add-warehouse__link-cancel">
+              <Link to="/warehouses" className="add-warehouse__link-cancel">
                 <button className="add-warehouse__cancel">Cancel</button>
               </Link>
               <button className="add-warehouse__delete" type="submit">
