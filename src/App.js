@@ -19,33 +19,33 @@ function App() {
         <main className="main-section">
           <Routes>
             <Route path="/" element={<Warehouses />}></Route>
-            <Route path="warehouses" element={<Warehouses />}></Route>
-            <Route path="warehouses/add" element={<AddWarehouse />}></Route>
+            <Route path="./warehouses" element={<Warehouses />}></Route>
+            <Route path="./warehouses/add" element={<AddWarehouse />}></Route>
             <Route
-              path="warehouses/:warehouseId"
+              path="./warehouses/:warehouseId"
               element={<SelectedWarehouse />}
             ></Route>
             <Route
-              path="warehouses/:warehouseId/delete"
+              path="./warehouses/:warehouseId/delete"
               element={<Warehouses />}
             ></Route>
             <Route
-              path="warehouses/:warehouseId/edit"
+              path="./warehouses/:warehouseId/edit"
               element={<EditWarehouse />}
             ></Route>
             <Route
-              path="warehouses/:warehouseId/:inventoryId"
+              path="./warehouses/:warehouseId/:inventoryId"
               element={<Warehouses />}
             ></Route>
-            <Route path="inventory" element={<Inventory />}></Route>
+            <Route path="./inventory" element={<Inventory />}></Route>
             <Route
-              path="inventory/:inventoryId"
+              path="./inventory/:inventoryId"
               element={<InventoryItemDetails />}
             ></Route>
-            <Route path="/inventory/add"
+            <Route path="./inventory/add"
             element={<AddItem />}
             ></Route>
-            <Route path="/inventory/:inventoryId/edit"
+            <Route path="./inventory/:inventoryId/edit"
             element={<Edititem />}
             ></Route>
           </Routes>
