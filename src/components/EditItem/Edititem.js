@@ -19,11 +19,14 @@ function Edititem() {
 
   useEffect(() => {
     axios
-      .get(`https://184f-108-173-235-62.ngrok-free.app/inventories/${inventoryId}`, {
-        headers: {
-          "ngrok-skip-browser-warning": "true",
-        },
-      })
+      .get(
+        `https://184f-108-173-235-62.ngrok-free.app/inventories/${inventoryId}`,
+        {
+          headers: {
+            "ngrok-skip-browser-warning": "true",
+          },
+        }
+      )
       .then((inventory) => {
         setInventory(inventory.data[0]);
       });
@@ -72,10 +75,6 @@ function Edititem() {
     } catch (error) {
       console.error(error);
     }
-  };
-
-  const handleCancel = () => {
-    window.location.href = `/warehouses`;
   };
 
   return (
@@ -222,15 +221,14 @@ function Edititem() {
             </label>
             <section className="edit-inventory__button-container">
               <div className="edit-inventory__button-cancel-div">
-                <button
-                  onClick={() => {
-                    handleCancel();
-                  }}
-                  type="button"
-                  className="edit-inventory__button-cancel"
-                >
-                  Cancel
-                </button>
+                <Link to={`/inventory/${inventoryId}`}>
+                  <button
+                    type="button"
+                    className="edit-inventory__button-cancel"
+                  >
+                    Cancel
+                  </button>
+                </Link>
               </div>
               <div className="edit-inventory__button-add-div">
                 <button className="edit-inventory__button-add" type="submit">
