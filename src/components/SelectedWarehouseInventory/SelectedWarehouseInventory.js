@@ -94,7 +94,10 @@ const SelectedWarehouseInventory = () => {
               <Link className="selected-warehouse__link">
                 <img src={deleteIcon} alt="delete icon" />
               </Link>
-              <Link to={`./edit`} className="selected-warehouse__link">
+              <Link
+                to={`/inventory/${warehouseInventory.id}/edit`}
+                className="selected-warehouse__link"
+              >
                 <img src={editIcon} alt="edit icon" />
               </Link>
             </div>
