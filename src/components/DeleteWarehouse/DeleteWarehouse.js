@@ -16,9 +16,8 @@ const DeleteWarehouse = ({ isOpen, onClose, warehouseName, warehouseId }) => {
         }
       )
       .then(() => {
-        alert("Successful");
         onClose();
-        navigate("/warehouses");
+        navigate('/warehouses')
       })
       .catch((error) => {
         console.error("Error deleting warehouse:", error);
