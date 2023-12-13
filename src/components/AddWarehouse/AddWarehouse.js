@@ -2,7 +2,7 @@ import "./AddWarehouse.scss";
 import { useState } from "react";
 import axios from "axios";
 import backArrow from "../../assets/images/Icons/arrow_back-24px.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const AddWarehouse = () => {
   const [name, setName] = useState("");
@@ -13,6 +13,7 @@ const AddWarehouse = () => {
   const [positon, setPositon] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const navigate = useNavigate();
 
   const newWarehouse = async (warehouseData) => {
     return axios.post(
@@ -42,6 +43,7 @@ const AddWarehouse = () => {
       const response = await newWarehouse(warehouseData);
       if (response.status === 200) {
         alert("successful");
+        navigate("./warehouses")
       } else {
         alert("failed");
       }
