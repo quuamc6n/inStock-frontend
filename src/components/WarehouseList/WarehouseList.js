@@ -22,8 +22,6 @@ const WarehouseList = (props) => {
     setSelectedWarehouseId(null);
     setDeleteModalOpen(false);
   };
-  console.log("here")
-  console.log(props)
 
   return (
     <main className="main">
@@ -84,7 +82,7 @@ const WarehouseList = (props) => {
                 <button onClick={() => openDeleteModal(warehouse.warehouse_name, warehouse.id)} className="main__buttons--delete">
                   <img src={deleteIcon} alt="Delete Icon"></img>
                 </button>
-                <Link to={`./${warehouse.id}/edit`}>
+                <Link to={`./warehouses/${warehouse.id}/edit`}>
                   <img src={editIcon} alt="Edit Icon"></img>
                 </Link>
               </div>
