@@ -2,8 +2,10 @@ import "./DeleteInventory.scss";
 import React from "react";
 import CloseIcon from "../../assets/images/Icons/close-24px.svg";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const DeleteInventory = ({ isOpen, onClose, inventoryName, inventoryId }) => {
+  const navigate = useNavigate();
   const handleDelete = () => {
     axios
       .delete(
@@ -14,7 +16,7 @@ const DeleteInventory = ({ isOpen, onClose, inventoryName, inventoryId }) => {
       )
       .then(() => {
         onClose();
-        window.location.reload();
+        navigate('/')
       })
       .catch((error) => {
         console.error("Error deleting inventory item:", error);

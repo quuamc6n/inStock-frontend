@@ -2,8 +2,10 @@ import "./deletewarehouse.scss";
 import React from "react";
 import CloseIcon from "../../assets/images/Icons/close-24px.svg";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const DeleteWarehouse = ({ isOpen, onClose, warehouseName, warehouseId }) => {
+  const navigate = useNavigate();
   const handleDelete = () => {
     axios
       .delete(
@@ -14,7 +16,7 @@ const DeleteWarehouse = ({ isOpen, onClose, warehouseName, warehouseId }) => {
       )
       .then(() => {
         onClose();
-        window.location.reload();
+        navigate('/');
       })
       .catch((error) => {
         console.error("Error deleting warehouse:", error);
