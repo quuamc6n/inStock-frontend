@@ -16,7 +16,8 @@ const DeleteInventory = ({ isOpen, onClose, inventoryName, inventoryId }) => {
       )
       .then(() => {
         onClose();
-        navigate('/')
+        navigate('/');
+        window.location.reload();
       })
       .catch((error) => {
         console.error("Error deleting inventory item:", error);

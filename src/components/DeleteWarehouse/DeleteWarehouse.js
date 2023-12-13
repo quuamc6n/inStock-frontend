@@ -17,6 +17,7 @@ const DeleteWarehouse = ({ isOpen, onClose, warehouseName, warehouseId }) => {
       .then(() => {
         onClose();
         navigate('/');
+        window.location.reload();
       })
       .catch((error) => {
         console.error("Error deleting warehouse:", error);
