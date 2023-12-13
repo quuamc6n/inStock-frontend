@@ -55,7 +55,7 @@ const AddWarehouse = () => {
   return (
     <section className="add-warehouse">
       <div className="add-warehouse__container">
-        <Link to="warehouses" className="add-warehouse__link">
+        <Link to="./warehouses" className="add-warehouse__link">
           <img
             src={backArrow}
             className="add-warehouse__arrow"
